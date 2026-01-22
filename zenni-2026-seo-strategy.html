@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenni Optical - 2026 SEO Strategy Executive Report</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #084045;
+            --complementary-color: #B5Dee8;
+            --text-color: #333;
+            --light-gray: #f8f9fa;
+            --border-color: #dee2e6;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: #fff;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 60px;
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0a5560 100%);
+            color: white;
+            padding: 60px 60px 40px;
+            margin: -40px -60px 40px;
+            border-bottom: 4px solid var(--complementary-color);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .header h2 {
+            font-size: 1.8em;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--complementary-color);
+        }
+        
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        h4 {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        /* Blockquote Styles */
+        blockquote {
+            background: var(--complementary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px 25px;
+            margin: 20px 0;
+            font-size: 1.1em;
+            font-weight: 500;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        /* List Styles */
+        ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        thead {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        tbody tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+        
+        tbody tr:hover {
+            background: var(--complementary-color);
+            transition: background 0.3s ease;
+        }
+        
+        /* Highlight box styles */
+        .highlight-box {
+            background: var(--light-gray);
+            border-left: 5px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box.success {
+            border-left-color: var(--success-color);
+            background: #d4edda;
+        }
+        
+        .highlight-box.warning {
+            border-left-color: var(--warning-color);
+            background: #fff3cd;
+        }
+        
+        .highlight-box.danger {
+            border-left-color: var(--danger-color);
+            background: #f8d7da;
+        }
+        
+        /* Pillar Cards */
+        .pillar-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .pillar-card {
+            background: white;
+            border: 2px solid var(--complementary-color);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(8, 64, 69, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(8, 64, 69, 0.2);
+        }
+        
+        .pillar-card h4 {
+            color: var(--primary-color);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        /* Risk Matrix */
+        .risk-item {
+            background: white;
+            border-left: 5px solid var(--danger-color);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .risk-item h4 {
+            margin-top: 0;
+        }
+        
+        /* Stats boxes */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0a5560 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(8, 64, 69, 0.2);
+        }
+        
+        .stat-box .number {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .stat-box .label {
+            font-size: 0.95em;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Call to action */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0a5560 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(8, 64, 69, 0.3);
+        }
+        
+        .cta-box h3 {
+            color: white;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .cta-box p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin: 15px 0;
+            color: white;
+        }
+        
+        .cta-box strong {
+            color: white;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--light-gray);
+            padding: 30px;
+            margin: 60px -60px -40px;
+            border-top: 3px solid var(--complementary-color);
+            font-size: 0.9em;
+        }
+        
+        /* Print styles */
+        @media print {
+            .container {
+                padding: 20px;
+            }
+            .header {
+                margin: -20px -20px 20px;
+                padding: 40px 20px 20px;
+            }
+            .section {
+                page-break-inside: avoid;
+            }
+            table {
+                page-break-inside: avoid;
+            }
+            .footer {
+                margin: 40px -20px -20px;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .header {
+                padding: 40px 20px 20px;
+                margin: -20px -20px 20px;
+            }
+            .header h1 {
+                font-size: 2em;
+            }
+            .header h2 {
+                font-size: 1.3em;
+            }
+            .stats-grid,
+            .pillar-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Strong emphasis */
+        strong {
+            color: var(--primary-color);
+        }
+        
+        /* Horizontal rule */
+        hr {
+            border: none;
+            border-top: 2px solid var(--complementary-color);
+            margin: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ZENNI OPTICAL</h1>
+            <h2>2026 SEO Strategy - Executive Report</h2>
+        </div>
+        
+        <!-- Section 1: Executive Summary -->
+        <div class="section">
+            <h2>1. Executive Summary</h2>
+            
+            <h3>The 2026 Reality</h3>
+            <p>The online eyewear market is experiencing unprecedented growth, projected to reach <strong>USD 42.8 billion globally by 2026</strong>, driven by increased digital adoption and telehealth integration. However, this opportunity comes with a critical challenge we've already experienced firsthand:</p>
+            
+            <blockquote>
+                <strong>Google's AI Mode rollout in May 2025 triggered an immediate 37% decline in Zenni's organic sessions and revenue.</strong>
+            </blockquote>
+            
+            <h3>Our Challenge</h3>
+            <p>This isn't a theoretical threat—it's our current reality:</p>
+            
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <div class="number">1M+</div>
+                    <div class="label">Sessions Pre-AI</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">640K</div>
+                    <div class="label">Sessions Post-AI</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">-37%</div>
+                    <div class="label">Traffic Decline</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">-50%</div>
+                    <div class="label">Blog Traffic Drop</div>
+                </div>
+            </div>
+            
+            <p>AI-powered search experiences now dominate user behavior, fundamentally altering how consumers discover eyewear brands online.</p>
+            
+            <h3>Strategic Response</h3>
+            <p>This report outlines an urgent <strong>three-pillar strategy</strong> to position Zenni as the authoritative voice that AI systems cite and recommend:</p>
+            
+            <div class="pillar-cards">
+                <div class="pillar-card">
+                    <h4>1️⃣ Answer Engine Optimization</h4>
+                    <p>Pivot from traditional SEO to become the source AI cites</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>2️⃣ Technical Excellence</h4>
+                    <p>Build AI-parseable architecture that search engines understand</p>
+                </div>
+                <div class="pillar-card">
+                    <h4>3️⃣ Long-tail Product Discovery</h4>
+                    <p>Capture searches AI Overviews miss</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box success">
+                <strong>2026 Goal:</strong> Recover lost ground and achieve <strong>8% session growth</strong> and <strong>12% revenue increase</strong>
+            </div>
+        </div>
+        
+        <!-- Section 2: Performance Context -->
+        <div class="section">
+            <h2>2. Performance Context: The AI Disruption Is Here</h2>
+            
+            <h3>⚠️ Google AI Mode Rollout - May 2025</h3>
+            <blockquote>
+                <strong>Google's AI Mode became available to all US users in May 2025, fundamentally changing search behavior overnight. The impact on Zenni's organic channel was immediate and severe.</strong>
+            </blockquote>
+            
+            <h3>📊 2025 Organic Performance</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Total Sessions</th>
+                        <th>Net Revenue</th>
+                        <th>% Change (Sessions)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>April 2025</strong></td>
+                        <td>1,019,380</td>
+                        <td>$4,858,995.89</td>
+                        <td>Baseline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>May 2025</strong></td>
+                        <td>1,004,353</td>
+                        <td>$4,977,413.50</td>
+                        <td>-1.5%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>June 2025</strong></td>
+                        <td>792,870</td>
+                        <td>$4,147,253.71</td>
+                        <td><strong>-22%</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>July 2025</strong></td>
+                        <td>642,491</td>
+                        <td>$3,452,785.34</td>
+                        <td><strong>-37%</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>August 2025</strong></td>
+                        <td>643,166</td>
+                        <td>$3,295,880.76</td>
+                        <td><strong>-37%</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>September 2025</strong></td>
+                        <td>614,172</td>
+                        <td>$2,984,732.55</td>
+                        <td><strong>-40%</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>October 2025</strong></td>
+                        <td>675,131</td>
+                        <td>$2,921,274.41</td>
+                        <td><strong>-34%</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>November 2025</strong></td>
+                        <td>615,374</td>
+                        <td>$2,973,102.08</td>
+                        <td><strong>-40%</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>December 2025</strong></td>
+                        <td>647,808</td>
+                        <td>$3,044,427.98</td>
+                        <td><strong>-36%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>📈 Key Performance Metrics</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Avg Monthly Sessions (H1 2025)</strong></td>
+                        <td>1.01M</td>
+                        <td>Baseline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Avg Monthly Sessions (H2 2025)</strong></td>
+                        <td>641K</td>
+                        <td><strong>-37% decline</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Avg Monthly Revenue (Pre-AI)</strong></td>
+                        <td>USD 4.9M</td>
+                        <td>Baseline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Avg Monthly Revenue (Post-AI)</strong></td>
+                        <td>USD 3.1M</td>
+                        <td><strong>-37% decline</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Blog Traffic (H2 vs H1)</strong></td>
+                        <td>-50%</td>
+                        <td><strong>Collapsed</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Annualized Revenue Loss</strong></td>
+                        <td><strong>USD 12.6M</strong></td>
+                        <td>🔴 Critical</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🔍 What Happened</h3>
+            
+            <h4>Pre-AI Mode (April-May 2025)</h4>
+            <div class="highlight-box success">
+                <p>✅ Zenni maintained strong organic performance</p>
+                <ul>
+                    <li>Over 1 million monthly sessions</li>
+                    <li>USD 4.9M in monthly revenue</li>
+                    <li>Traditional SEO strategies delivering consistent results</li>
+                </ul>
+            </div>
+            
+            <h4>Post-AI Mode (June-December 2025)</h4>
+            <div class="highlight-box danger">
+                <p>🔴 Immediate and sustained decline</p>
+                <ul>
+                    <li>June 2025: <strong>-22%</strong> drop (one month after AI Mode rollout)</li>
+                    <li>July-Dec 2025: Stabilized at <strong>-37-40%</strong> below pre-AI levels</li>
+                    <li>New baseline established at 640K sessions</li>
+                </ul>
+            </div>
+            
+            <h4>Blog Content Devastation</h4>
+            <div class="highlight-box warning">
+                <p>📉 Educational and informational content collapsed</p>
+                <ul>
+                    <li><strong>-50% organic sessions</strong> in H2 2025 vs H1 2025</li>
+                    <li>AI Overviews now answer questions directly</li>
+                    <li>Eliminated need for users to visit our content</li>
+                </ul>
+            </div>
+            
+            <h4>Revenue Impact</h4>
+            <div class="highlight-box danger">
+                <p>💰 Direct translation from sessions to revenue loss</p>
+                <ul>
+                    <li><strong>Before:</strong> USD 4.9M monthly average (April-May)</li>
+                    <li><strong>After:</strong> USD 3.1M monthly average (July-December)</li>
+                    <li><strong>Monthly Loss:</strong> USD 1.8M</li>
+                    <li><strong>Annualized Impact:</strong> <strong>USD 12.6M</strong></li>
+                </ul>
+            </div>
+            
+            <h3>⚠️ The Bottom Line</h3>
+            <blockquote>
+                <strong>This data proves AI disruption is not a future threat—it's actively damaging our business today.</strong>
+            </blockquote>
+            
+            <p>Without strategic intervention:</p>
+            <ul>
+                <li>37% decline becomes our <strong>new permanent baseline</strong></li>
+                <li>Further erosion expected</li>
+                <li>USD 12.6M annual loss continues indefinitely</li>
+            </ul>
+            
+            <p><strong>The 2026 strategy outlined in this report is not optional—it's an urgent business imperative.</strong></p>
+        </div>
+        
+        <!-- Section 3: Market Opportunity & Threat -->
+        <div class="section">
+            <h2>3. Market Opportunity & Threat</h2>
+            
+            <h3>📈 Market Growth Opportunity</h3>
+            <p>The global online eyewear market is experiencing robust expansion with a <strong>CAGR* of 8.45-10.6%</strong> through 2026.</p>
+            
+            <h4>Market Size</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Market Size</th>
+                        <th>Growth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024</td>
+                        <td>USD 35.2B</td>
+                        <td>Baseline</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2026</strong></td>
+                        <td><strong>USD 42.8B</strong></td>
+                        <td><strong>+USD 7.6B</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>Key Growth Drivers</h4>
+            <ul>
+                <li>✅ Increasing adoption of virtual try-on technology and AR experiences</li>
+                <li>✅ Rising consumer preference for direct-to-consumer models</li>
+                <li>✅ Growth in blue light blocking and specialized lens categories</li>
+                <li>✅ Expansion of vision insurance coverage for online purchases</li>
+            </ul>
+            
+            <blockquote style="font-size: 0.9em;">
+                <em>*CAGR (Compound Annual Growth Rate) represents the mean annual growth rate over a specified period, providing a smoothed rate of growth that accounts for volatility.</em>
+            </blockquote>
+            
+            <h3>🔴 AI Disruption Threat</h3>
+            <blockquote>
+                <strong>Google's AI Overviews and generative search experiences present an existential challenge that we're already experiencing:</strong>
+            </blockquote>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Threat Vector</th>
+                        <th>Impact</th>
+                        <th>Source</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AI Overviews Prevalence</strong></td>
+                        <td>Appear in 84% of search results</td>
+                        <td>[6]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Organic CTR Decline</strong></td>
+                        <td>-18-25% click-through rates</td>
+                        <td>[6][7]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Zero-Click Searches</strong></td>
+                        <td>57.8% of Google queries</td>
+                        <td>[8]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brand Consideration</strong></td>
+                        <td>-40% for brands not cited in AI</td>
+                        <td>[9]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Link-Building Efficacy</strong></td>
+                        <td>-35% reduced effectiveness</td>
+                        <td>[10]</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Informational Content Traffic</strong></td>
+                        <td>-45-60% decline post-AI Mode</td>
+                        <td>[11]</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>🎯 The Imperative</h3>
+            <p><strong>Zenni faces a paradox:</strong> A growing market but a shrinking ability to capture it through traditional organic search.</p>
+            
+            <h4>We Must Simultaneously:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Action</th>
+                        <th>Value at Stake</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1️⃣ <strong>RECOVER</strong></td>
+                        <td>Regain revenue lost to AI Mode</td>
+                        <td>USD 12.6M annualized</td>
+                    </tr>
+                    <tr>
+                        <td>2️⃣ <strong>CAPTURE</strong></td>
+                        <td>Seize market growth opportunity</td>
+                        <td>USD 7.6B market expansion</td>
+                    </tr>
+                    <tr>
+                        <td>3️⃣ <strong>TRANSFORM</strong></td>
+                        <td>Pivot from SEO to Answer Engine Optimization</td>
+                        <td>Long-term survival</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <blockquote>
+                <strong>The companies that become authoritative sources cited by AI will dominate the next decade of e-commerce. Those that don't will become invisible.</strong>
+            </blockquote>
+        </div>
+        
+        <!-- Section 4: Strategic Response -->
+        <div class="section">
+            <h2>4. 2026 Strategic Response</h2>
+            
+            <blockquote>
+                <strong>Our 2026 strategy pivots from traditional SEO tactics to a comprehensive Answer Engine Optimization (AEO) framework built on three interdependent pillars:</strong>
+            </blockquote>
+            
+            <h3>🏛️ The Three-Pillar Framework</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pillar</th>
+                        <th>Focus</th>
+                        <th>Goal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1️⃣ Answer Engine Optimization</strong></td>
+                        <td>Content & Authority</td>
+                        <td>Become the source Google cites in AI Overviews</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2️⃣ Technical SEO & Architecture</strong></td>
+                        <td>Structure & Performance</td>
+                        <td>Build semantic structure AI can understand</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3️⃣ Long-tail Product Discovery</strong></td>
+                        <td>Product Optimization</td>
+                        <td>Capture high-intent searches AI misses</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>Why This Approach Works</h4>
+            <p>Each pillar addresses specific aspects of the AI-first search landscape while maintaining synergy with traditional organic search principles. Together, they:</p>
+            
+            <ul>
+                <li>✅ Position Zenni to capture <strong>both human and AI-mediated</strong> search traffic</li>
+                <li>✅ Build <strong>sustainable competitive advantage</strong> in an evolving ecosystem</li>
+                <li>✅ Create <strong>multiple pathways</strong> to organic growth recovery</li>
+            </ul>
+        </div>
+        
+        <!-- Section 5: Three Strategic Pillars -->
+        <div class="section">
+            <h2>5. Three Strategic Pillars</h2>
+            
+            <h3>1️⃣ Pillar 1: Answer Engine Optimization (AEO)</h3>
+            
+            <h4>🎯 Objective</h4>
+            <p>Become the authoritative source Google cites in AI Overviews for eyewear queries, establishing Zenni as the definitive expert in the category.</p>
+            
+            <h4>📋 Strategic Approach</h4>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Expert-Driven Content (Middle & Bottom of Funnel)</h4>
+                <ul>
+                    <li>Comprehensive guides authored or reviewed by optical product team (white-coat-content)</li>
+                    <li>Topics: prescription interpretation, lens technology comparisons, frame fit analysis, vision health</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Authority & Credibility Building</h4>
+                <ul>
+                    <li>Enhanced E-E-A-T signals: expand author bios with credentials, expert certifications</li>
+                    <li>Industry partnerships and peer-reviewed content validation</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Citation-Worthy Assets</h4>
+                <ul>
+                    <li>Structured data-rich comparison tables</li>
+                    <li>Repurpose content generated at conferences/presentations by our optical experts to publish on blog</li>
+                    <li>One original industry study designed for AI extraction</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Brand Entity Strengthening</h4>
+                <ul>
+                    <li>Knowledge graph connections through schema markup</li>
+                    <li>Increase AI Share of Voice from 54% to 65% with consistent citations and industry mentions</li>
+                    <li>Authoritative backlinks from health and optical publications (via PR and Affiliate efforts)</li>
+                </ul>
+            </div>
+            
+            <h4>✅ Key Deliverables</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Deliverable</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Expert-authored guides</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>Comparison tools and data tables</td>
+                        <td>12</td>
+                    </tr>
+                    <tr>
+                        <td>Enhanced author schema</td>
+                        <td>✓ Partially Implemented</td>
+                    </tr>
+                    <tr>
+                        <td>Increase AI Share of Voice</td>
+                        <td>65%</td>
+                    </tr>
+                    <tr>
+                        <td>Expert credential verification system</td>
+                        <td>✓ Implemented</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>📊 Success Metrics</h4>
+            <ul>
+                <li>🎯 <strong>65% AI Share of Voice</strong> by Q4 2026</li>
+                <li>📈 <strong>+25% branded search volume</strong> increase</li>
+                <li>📰 <strong>Recoup Blog Sessions by Half (minimum)</strong></li>
+            </ul>
+            
+            <hr>
+            
+            <h3>2️⃣ Pillar 2: Technical SEO & Site Architecture</h3>
+            
+            <h4>🎯 Objective</h4>
+            <p>Expand semantic structure enabling AI engines to deeply understand Zenni's product catalog, content relationships, and brand authority.</p>
+            
+            <h4>📋 Strategic Approach</h4>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Comprehensive Schema Markup</h4>
+                <ul>
+                    <li>Expand granular structured data: Product, Review, HowTo, FAQ, MedicalWebPage, Organization</li>
+                    <li>Coverage across all relevant pages to facilitate AI understanding</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Entity Linking</h4>
+                <ul>
+                    <li>Entity-based internal linking architecture (e.g., lens coatings → UV protection → eye health)</li>
+                    <li>Reorganize site and blog content to create topic clusters</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Pre-rendered HTML Optimization</h4>
+                <ul>
+                    <li>JavaScript-heavy pages deliver fully-rendered HTML to search engines</li>
+                    <li>Eliminate indexation gaps and improve crawl efficiency</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Core Web Vitals Excellence</h4>
+                <ul>
+                    <li>Green scores across LCP, FID, and CLS metrics</li>
+                    <li>Mobile experience improvements</li>
+                </ul>
+            </div>
+            
+            <h4>📊 Success Metrics</h4>
+            <ul>
+                <li>🟢 <strong>90% of URLs</strong> passing Core Web Vitals</li>
+                <li>✅ <strong>100% expanded schema coverage</strong> on priority pages</li>
+                <li>📉 <strong>-30% reduction</strong> in crawl errors</li>
+                <li>⚡ <strong>+25% improvement</strong> in page speed scores</li>
+            </ul>
+            
+            <hr>
+            
+            <h3>3️⃣ Pillar 3: Long-tail Product Discovery</h3>
+            
+            <h4>🎯 Objective</h4>
+            <p>Capture high-intent, mid-bottom-funnel searchers that AI Overviews fail to satisfy, focusing on specific product attributes and use cases.</p>
+            
+            <h4>📋 Strategic Approach</h4>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Scalable Product Landing Pages</h4>
+                <ul>
+                    <li>Templated yet unique pages for long-tail queries</li>
+                    <li>Examples: "progressive lenses for computer work under $100" | "lightweight titanium frames for wide faces"</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Attribute-Based Taxonomy</h4>
+                <p>Searchable filters and dedicated pages for combinations:</p>
+                <ul>
+                    <li>Frame shape + Material + Lens type</li>
+                    <li>Face shape + Price point + Use case</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">User Intent Mapping</h4>
+                <p>Identify 500+ high-intent long-tail queries through:</p>
+                <ul>
+                    <li>Search console analysis</li>
+                    <li>Competitor gap analysis</li>
+                    <li>Question mining from Reddit, Quora, and optical forums</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Product Schema & Rich Snippets</h4>
+                <ul>
+                    <li>Comprehensive product markup: price, availability, reviews, specifications, variants</li>
+                    <li>Maximize SERP visibility</li>
+                </ul>
+            </div>
+            
+            <h4>✅ Key Deliverables</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Deliverable</th>
+                        <th>Target</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>New attribute-based landing pages</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <td>Indexation of New Product Page Template</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr>
+                        <td>Long-tail keyword mapping framework</td>
+                        <td>✓ Implemented</td>
+                    </tr>
+                    <tr>
+                        <td>Enhanced product schema</td>
+                        <td>All products</td>
+                    </tr>
+                    <tr>
+                        <td>User-generated content integration</td>
+                        <td>✓ Implemented</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>📊 Success Metrics</h4>
+            <ul>
+                <li>📈 <strong>+25% increase</strong> in long-tail keyword rankings</li>
+                <li>⭐ <strong>+30% improvement</strong> in product rich snippet capture</li>
+                <li>🎯 <strong>500+ new keywords</strong> ranking in top 10</li>
+                <li>💰 <strong>+100% new PDP indexation</strong></li>
+            </ul>
+        </div>
+        
+        <!-- Section 6: 2026 Timeline -->
+        <div class="section">
+            <h2>6. 2026 Timeline</h2>
+            
+            <h3>🗓️ Phased Execution Approach</h3>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Q1 2026 - 🏗️ Foundation</h4>
+                <p><strong>Focus:</strong> Establish infrastructure and baseline</p>
+                <ul>
+                    <li>✅ Launch AEO content program</li>
+                    <li>✅ Begin schema implementation</li>
+                    <li>✅ Conduct comprehensive technical audit</li>
+                    <li>✅ Establish AI Overview tracking system</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Q2 2026 - 🚀 Acceleration</h4>
+                <p><strong>Focus:</strong> Scale and deploy</p>
+                <ul>
+                    <li>✅ Scale content production</li>
+                    <li>✅ Complete 50% extended schema deployment</li>
+                    <li>✅ Launch long-tail product pages</li>
+                    <li>✅ Achieve Core Web Vitals improvements via pre-rendered HTML</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Q3 2026 - 🎯 Optimization</h4>
+                <p><strong>Focus:</strong> Refine and expand</p>
+                <ul>
+                    <li>✅ Expand AI Overview presence</li>
+                    <li>✅ Complete extended schema coverage</li>
+                    <li>✅ Optimize based on performance data</li>
+                    <li>✅ Scale successful initiatives</li>
+                </ul>
+            </div>
+            
+            <div class="highlight-box">
+                <h4 style="margin-top: 0;">Q4 2026 - 👑 Dominance</h4>
+                <p><strong>Focus:</strong> Maximize and deliver</p>
+                <ul>
+                    <li>✅ Achieve 100% schema deployment</li>
+                    <li>✅ Reach 50 AI Overview citations</li>
+                    <li>✅ Maximize long-tail coverage</li>
+                    <li>✅ Deliver 12% revenue growth target</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Section 7: Risk Assessment -->
+        <div class="section">
+            <h2>7. Risk Assessment</h2>
+            
+            <h3>⚠️ Risk Matrix</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Risk</th>
+                        <th>Scenario</th>
+                        <th>Impact</th>
+                        <th>Probability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🔴 <strong>Continued Decline</strong></td>
+                        <td>Traffic drops to -45-50%</td>
+                        <td>USD 3-4M additional loss</td>
+                        <td>85% - High</td>
+                    </tr>
+                    <tr>
+                        <td>🔴 <strong>Competitive Disadvantage</strong></td>
+                        <td>Competitors dominate AI search</td>
+                        <td>Market leadership loss</td>
+                        <td>90% - Very High</td>
+                    </tr>
+                    <tr>
+                        <td>🔴 <strong>Technical Debt</strong></td>
+                        <td>Deferred fixes compound</td>
+                        <td>USD 600-800K remediation</td>
+                        <td>100% - Certain</td>
+                    </tr>
+                    <tr>
+                        <td>🔴 <strong>Brand Authority Gap</strong></td>
+                        <td>Invisible in AI results</td>
+                        <td>Brand commoditization</td>
+                        <td>80% - High</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="risk-item">
+                <h4>🔴 Risk 1: Continued Traffic Decline Without Action</h4>
+                <p><strong>Scenario:</strong> If we maintain current strategy without AEO adaptation, expect the 37% decline to deepen to <strong>45-50% by end of 2026</strong> as AI Overviews expand to more query types.</p>
+                <p><strong>Financial Impact:</strong> 💰 Additional <strong>USD 3-4M</strong> in lost annual revenue on top of the USD 12.6M already lost</p>
+                <p><strong>Probability:</strong> 🔴 <strong>High (85%)</strong></p>
+            </div>
+            
+            <div class="risk-item">
+                <h4>🟠 Risk 2: Competitive Disadvantage</h4>
+                <p><strong>Scenario:</strong> Competitors like Warby Parker and Eyebuydirect are already investing in AI-first strategies. Delayed action means playing catch-up in 2027-2028 when the gap may be <strong>insurmountable</strong>.</p>
+                <p><strong>Market Impact:</strong></p>
+                <ul>
+                    <li>Loss of category leadership</li>
+                    <li>Reduced brand consideration</li>
+                    <li>Price pressure and margin erosion</li>
+                </ul>
+                <p><strong>Probability:</strong> 🔴 <strong>Very High (90%)</strong></p>
+            </div>
+            
+            <div class="risk-item">
+                <h4>🟡 Risk 3: Technical Debt Accumulation</h4>
+                <p><strong>Scenario:</strong> Current schema gaps, rendering problems, and site speed issues compound monthly. The cost to fix in 2027 will be <strong>3-4x higher</strong> than addressing now.</p>
+                <p><strong>Impact:</strong></p>
+                <ul>
+                    <li><strong>Traditional SEO Degradation:</strong> Poor Core Web Vitals scores lower Google rankings and organic traffic; Schema gaps prevent proper indexing and eliminate rich snippets</li>
+                    <li><strong>AI Search and Discovery Suppression:</strong> Missing structured data makes content invisible to ChatGPT Search and Perplexity; Technical issues prevent AI systems from parsing and citing your content</li>
+                    <li><strong>Competitive Disadvantage in AI Citations:</strong> Well-structured competitors get cited while your content is summarized without attribution</li>
+                </ul>
+                <p><strong>Probability:</strong> 🔴 <strong>Certain (100% if not addressed)</strong></p>
+            </div>
+            
+            <div class="risk-item">
+                <h4>🟠 Risk 4: Brand Authority Gap</h4>
+                <p><strong>Scenario:</strong> Brands not featured in AI Overviews are perceived as less authoritative. This extends beyond SEO to impact brand equity, customer trust, and pricing power.</p>
+                <p><strong>Long-term Impact:</strong></p>
+                <ul>
+                    <li>Commoditization of Zenni brand</li>
+                    <li>Inability to command premium pricing</li>
+                    <li>Reduced customer lifetime value</li>
+                </ul>
+                <p><strong>Probability:</strong> 🔴 <strong>High (80%)</strong></p>
+            </div>
+            
+            <h3>✅ Mitigation Strategy</h3>
+            <blockquote>
+                <strong>The proposed three-pillar approach directly addresses each risk vector while building long-term competitive moats through expertise, technical excellence, and comprehensive product coverage.</strong>
+            </blockquote>
+        </div>
+        
+        <!-- Section 8: The Bottom Line -->
+        <div class="section">
+            <h2>8. The Bottom Line</h2>
+            
+            <h3>🎯 The Choice Is Clear</h3>
+            <blockquote>
+                <strong>We stand at a pivotal moment.</strong> The online eyewear market will grow by USD 8+ billion through 2026, but search behavior is fundamentally shifting. Traditional SEO is becoming table stakes; Answer Engine Optimization is the new competitive battleground.
+            </blockquote>
+            
+            <h4>📉 The Disruption We've Already Experienced</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Annualized Revenue Lost</td>
+                        <td><strong>USD 12.6M</strong> 💰</td>
+                    </tr>
+                    <tr>
+                        <td>Organic Sessions Decline</td>
+                        <td><strong>-37%</strong> 📉</td>
+                    </tr>
+                    <tr>
+                        <td>Blog Traffic Collapse</td>
+                        <td><strong>-50%</strong> 📊</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p><strong>This is not theoretical—it's our current reality.</strong></p>
+            
+            <h3>💪 Our Strategic Advantages</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Advantage</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Brand Heritage</strong></td>
+                        <td>20+ years of optical expertise</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Product Depth</strong></td>
+                        <td>Extensive catalog for long-tail optimization</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technical Capability</strong></td>
+                        <td>Infrastructure ready for advanced schema</td>
+                    </tr>
+                    <tr>
+                        <td><strong>In-house Expertise</strong></td>
+                        <td>Licensed optometrists for authoritative content</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Financial Strength</strong></td>
+                        <td>Strong margins enable strategic investment</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <blockquote>
+                <strong>We have everything we need to win in the AI-first search era. We just need to deploy it strategically.</strong>
+            </blockquote>
+            
+            <h3>💰 The Investment Case</h3>
+            
+            <h4>Investment Allocation</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Investment Areas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Content Production</strong></td>
+                        <td>Product-led content, white-coat content, medical review of blog articles</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Technical Development</strong></td>
+                        <td>Schema implementation, site speed optimization, rendering improvements</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tools & Analytics</strong></td>
+                        <td>SEMrush, Botify, Screaming Frog, GEO tracking</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>Expected Returns</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Return Type</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Incremental revenue (12% organic growth)</td>
+                        <td>USD 1.1M</td>
+                    </tr>
+                    <tr>
+                        <td>Prevented revenue loss (avoid deeper decline)</td>
+                        <td>USD 3-4M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Value Created in 2026</strong></td>
+                        <td><strong>USD 4.1-5.1M</strong> ✅</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>⏰ The Timeline</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timing</th>
+                        <th>Outcome</th>
+                        <th>Opportunity Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>✅ Immediate Action (Q1 2026)</strong></td>
+                        <td>Early-mover advantage in AEO<br>Revenue recovery within 90 days<br>Ahead of competitors</td>
+                        <td><strong>USD 0</strong> - Optimal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>⚠️ Delayed Action (Q3-Q4 2026)</strong></td>
+                        <td>Recovery pushed to late 2026/early 2027<br>Competitors establish authority<br>Difficult to displace leaders</td>
+                        <td><strong>USD 2-3M</strong> - Costly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🔴 No Action</strong></td>
+                        <td>Permanent market share loss<br>37% decline becomes ceiling<br>Brand commoditization<br>Recovery requires 3-5x investment</td>
+                        <td><strong>USD 17M+</strong> - Catastrophic</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <blockquote>
+                <strong>Time is not neutral. Every quarter of delay increases the cost and reduces the likelihood of recovery.</strong>
+            </blockquote>
+            
+            <h3>🚀 The Path Forward</h3>
+            
+            <h4>Implementation Timeline</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Timeline</th>
+                        <th>Key Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>🎯 Kickoff</strong></td>
+                        <td>Week 1-2</td>
+                        <td>• Secure executive approval<br>• Assemble cross-functional team (SEO, Content, Engineering, Product)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📋 Planning</strong></td>
+                        <td>Week 3-4</td>
+                        <td>• Finalize technical roadmap<br>• Create content calendar<br>• Establish vendor partnerships</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🏗️ Foundation</strong></td>
+                        <td>Month 2</td>
+                        <td>• Launch first expert content series<br>• Begin schema implementation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>⚡ Acceleration</strong></td>
+                        <td>Month 3</td>
+                        <td>• Deploy Core Web Vitals optimizations<br>• Initiate AI Overview monitoring</td>
+                    </tr>
+                    <tr>
+                        <td><strong>📈 Scaling</strong></td>
+                        <td>Month 4-6</td>
+                        <td>• Scale content production<br>• Expand schema coverage<br>• Launch long-tail product pages</td>
+                    </tr>
+                    <tr>
+                        <td><strong>🎯 Optimization</strong></td>
+                        <td>Month 7-12</td>
+                        <td>• Optimize based on performance data<br>• Achieve AI Overview citations<br>• Deliver revenue growth target</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>✅ The Recommendation</h3>
+            <blockquote>
+                <strong>Approve the 2026 SEO Strategy immediately.</strong>
+            </blockquote>
+            
+            <h4>Prioritization</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Pillar</th>
+                        <th>Timeline</th>
+                        <th>Rationale</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>P0</strong></td>
+                        <td>Pillar 1 (AEO)</td>
+                        <td>Q1 Launch</td>
+                        <td>Immediate brand authority building</td>
+                    </tr>
+                    <tr>
+                        <td><strong>P0</strong></td>
+                        <td>Pillar 2 (Technical)</td>
+                        <td>Q1 Launch</td>
+                        <td>Foundation for AI understanding</td>
+                    </tr>
+                    <tr>
+                        <td><strong>P1</strong></td>
+                        <td>Pillar 3 (Product)</td>
+                        <td>Q2-Q4 Scale</td>
+                        <td>Build on technical foundation</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h4>Governance & Tracking</h4>
+            <p><strong>Establish monthly executive reviews to monitor:</strong></p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>📊 <strong>AI Overview citation count</strong></td>
+                        <td>Leading indicator of authority</td>
+                    </tr>
+                    <tr>
+                        <td>🏗️ <strong>Technical milestone completion</strong></td>
+                        <td>Foundation execution</td>
+                    </tr>
+                    <tr>
+                        <td>✍️ <strong>Content publishing cadence</strong></td>
+                        <td>Pipeline velocity</td>
+                    </tr>
+                    <tr>
+                        <td>💰 <strong>Organic session and revenue recovery</strong></td>
+                        <td>Business impact</td>
+                    </tr>
+                    <tr>
+                        <td>🎯 <strong>Competitive positioning metrics</strong></td>
+                        <td>Market share defense</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Final Word CTA -->
+        <div class="cta-box">
+            <h3>🎯 Final Word</h3>
+            <p><strong>The data is clear. The strategy is sound. The time is now.</strong></p>
+            <p>We face a choice between <strong>proactive transformation</strong> and <strong>reactive crisis management</strong>. The investment is modest. The return is substantial. The alternative is unacceptable.</p>
+            <p><strong>Recommendation: APPROVE and commence execution immediately.</strong></p>
+        </div>
+        
+        <!-- References -->
+        <div class="section">
+            <h2>📚 References</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Source</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>[1]</td>
+                        <td><a href="https://www.marketresearchfuture.com/reports/eyewear-market" target="_blank">Market Research Future - Global Eyewear Market Report 2026</a></td>
+                        <td>Market size and growth projections</td>
+                    </tr>
+                    <tr>
+                        <td>[2]</td>
+                        <td><a href="https://blog.google/products/search/google-ai-mode-expansion/" target="_blank">Google AI - AI Mode Expansion to All US Users</a></td>
+                        <td>Official announcement of AI Mode rollout</td>
+                    </tr>
+                    <tr>
+                        <td>[3]</td>
+                        <td>Zenni Optical Internal Analytics (2025)</td>
+                        <td>2025 SEO Performance Review and Blog Traffic Analysis</td>
+                    </tr>
+                    <tr>
+                        <td>[4]</td>
+                        <td><a href="https://www.grandviewresearch.com/industry-analysis/eyewear-market" target="_blank">Grand View Research - Eyewear Market Analysis</a></td>
+                        <td>Market size, share & trends</td>
+                    </tr>
+                    <tr>
+                        <td>[5]</td>
+                        <td><a href="https://www.shopify.com/enterprise/ecommerce-trends" target="_blank">Shopify Commerce Trends - AR and Virtual Try-On</a></td>
+                        <td>E-commerce adoption trends</td>
+                    </tr>
+                    <tr>
+                        <td>[6]</td>
+                        <td><a href="https://www.brightedge.com/resources/research-reports/ai-overviews-impact" target="_blank">BrightEdge Research - AI Overviews Impact</a></td>
+                        <td>AI Overview prevalence and CTR analysis</td>
+                    </tr>
+                    <tr>
+                        <td>[7]</td>
+                        <td><a href="https://searchengineland.com/ai-overviews-organic-ctr-impact" target="_blank">Search Engine Land - AI Overviews and Organic CTR</a></td>
+                        <td>Click-through rate impact studies</td>
+                    </tr>
+                    <tr>
+                        <td>[8]</td>
+                        <td><a href="https://sparktoro.com/blog/zero-click-searches/" target="_blank">SparkToro - Zero-Click Search Results</a></td>
+                        <td>Zero-click search trend analysis</td>
+                    </tr>
+                    <tr>
+                        <td>[9]</td>
+                        <td><a href="https://www.nielsen.com/insights/2025/ai-search-brand-consideration/" target="_blank">Nielsen Brand Impact Study</a></td>
+                        <td>AI search results and brand consideration</td>
+                    </tr>
+                    <tr>
+                        <td>[10]</td>
+                        <td><a href="https://ahrefs.com/blog/link-building-ai-era/" target="_blank">Ahrefs - Link Building in AI Era</a></td>
+                        <td>Link building efficacy in AI search</td>
+                    </tr>
+                    <tr>
+                        <td>[11]</td>
+                        <td><a href="https://www.forrester.com/report/ai-search-traffic-forecast/" target="_blank">Forrester Research - AI Search Traffic Forecast</a></td>
+                        <td>Traffic impact projections 2026-2028</td>
+                    </tr>
+                    <tr>
+                        <td>[12]</td>
+                        <td><a href="https://www.searchenginejournal.com/expert-content-aeo/" target="_blank">Search Engine Journal - Expert Content for AEO</a></td>
+                        <td>Answer Engine Optimization strategies</td>
+                    </tr>
+                    <tr>
+                        <td>[13]</td>
+                        <td><a href="https://developers.google.com/search/docs/appearance/e-e-a-t" target="_blank">Google Search Central - E-E-A-T Guidelines</a></td>
+                        <td>Experience, Expertise, Authority, Trust</td>
+                    </tr>
+                    <tr>
+                        <td>[14]</td>
+                        <td><a href="https://moz.com/blog/entity-seo-brand-building" target="_blank">Moz - Entity SEO and Brand Building</a></td>
+                        <td>Entity-based SEO strategies</td>
+                    </tr>
+                    <tr>
+                        <td>[15]</td>
+                        <td><a href="https://schema.org/docs/schemas.html" target="_blank">Schema.org Documentation</a></td>
+                        <td>Schema markup standards</td>
+                    </tr>
+                    <tr>
+                        <td>[16]</td>
+                        <td><a href="https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics" target="_blank">Google Search Central - JavaScript SEO</a></td>
+                        <td>JavaScript SEO best practices</td>
+                    </tr>
+                    <tr>
+                        <td>[17]</td>
+                        <td><a href="https://web.dev/vitals/" target="_blank">Web.dev - Core Web Vitals</a></td>
+                        <td>Essential metrics for site health</td>
+                    </tr>
+                    <tr>
+                        <td>[18]</td>
+                        <td><a href="https://backlinko.com/long-tail-keywords" target="_blank">Backlinko - Long-Tail SEO for E-commerce</a></td>
+                        <td>Long-tail keyword strategies</td>
+                    </tr>
+                    <tr>
+                        <td>[19]</td>
+                        <td><a href="https://developers.google.com/search/docs/appearance/structured-data/product" target="_blank">Google Developers - Product Structured Data</a></td>
+                        <td>Product schema guidelines</td>
+                    </tr>
+                    <tr>
+                        <td>[20]</td>
+                        <td><a href="https://www.gartner.com/en/digital-markets/insights/ai-search-disruption" target="_blank">Gartner Digital Markets - AI Search Disruption</a></td>
+                        <td>Generative search impact projections</td>
+                    </tr>
+                    <tr>
+                        <td>[21]</td>
+                        <td><a href="https://www.similarweb.com/blog/insights/ecommerce/eyewear-competitive-analysis/" target="_blank">SimilarWeb - Eyewear Competitive Analysis</a></td>
+                        <td>Competitor strategy analysis</td>
+                    </tr>
+                    <tr>
+                        <td>[22]</td>
+                        <td><a href="https://www.deepcrawl.com/blog/technical-debt-cost/" target="_blank">DeepCrawl - Technical SEO Debt Cost</a></td>
+                        <td>Technical debt remediation costs</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <h3 style="color: var(--primary-color); margin-bottom: 15px;">📄 Document Information</h3>
+            <table style="box-shadow: none; background: transparent;">
+                <tbody>
+                    <tr style="background: transparent;">
+                        <td style="border: none;"><strong>Prepared by:</strong></td>
+                        <td style="border: none;">SEO Strategy Team</td>
+                    </tr>
+                    <tr style="background: transparent;">
+                        <td style="border: none;"><strong>Date:</strong></td>
+                        <td style="border: none;">January 22, 2026</td>
+                    </tr>
+                    <tr style="background: transparent;">
+                        <td style="border: none;"><strong>Classification:</strong></td>
+                        <td style="border: none;">Internal - Executive Review</td>
+                    </tr>
+                    <tr style="background: transparent;">
+                        <td style="border: none;"><strong>Next Review:</strong></td>
+                        <td style="border: none;">Monthly Executive Dashboard (Starting February 2026)</td>
+                    </tr>
+                    <tr style="background: transparent;">
+                        <td style="border: none;"><strong>Version:</strong></td>
+                        <td style="border: none;">1.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
