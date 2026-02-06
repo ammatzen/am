@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenni Optical – Best Practices for Optimizing Generative Engine Outputs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --zenni-primary: #084045;
+            --zenni-complementary: #B5Dee8;
+            --zenni-dark: #052729;
+            --zenni-light: #E8F5F8;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --white: #FFFFFF;
+            --success: #27AE60;
+            --warning: #F39C12;
+            --danger: #E74C3C;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #F8F9FA;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(8, 64, 69, 0.1);
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--zenni-primary) 0%, var(--zenni-dark) 100%);
+            color: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .executive-summary {
+            background: rgba(181, 222, 232, 0.2);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .executive-summary h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .executive-summary ol {
+            list-style: none;
+            counter-reset: summary-counter;
+        }
+
+        .executive-summary li {
+            counter-increment: summary-counter;
+            margin-bottom: 0.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .executive-summary li::before {
+            content: counter(summary-counter);
+            position: absolute;
+            left: 0;
+            background: var(--zenni-complementary);
+            color: var(--zenni-primary);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Navigation */
+        .nav-wrapper {
+            position: sticky;
+            top: 0;
+            background: var(--zenni-primary);
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-title {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--zenni-complementary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        /* Main Content */
+        .content {
+            padding: 3rem 2rem;
+        }
+
+        h2 {
+            color: var(--zenni-primary);
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--zenni-complementary);
+        }
+
+        h3 {
+            color: var(--zenni-primary);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        h4 {
+            color: var(--zenni-dark);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Core Principle Box */
+        .core-principle {
+            background: var(--zenni-light);
+            border-left: 4px solid var(--zenni-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .core-principle strong:first-child {
+            color: var(--zenni-primary);
+            font-size: 1.1rem;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        /* Checkmarks and X marks */
+        li:has(> *:first-child) {
+            list-style: none;
+            margin-left: -1rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        thead {
+            background: var(--zenni-primary);
+            color: var(--white);
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        tbody tr:nth-child(even) {
+            background: var(--zenni-light);
+        }
+
+        tbody tr:hover {
+            background: rgba(181, 222, 232, 0.3);
+        }
+
+        /* Code blocks */
+        pre, code {
+            background: #F5F5F5;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        pre {
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        code {
+            padding: 0.2rem 0.4rem;
+        }
+
+        pre code {
+            padding: 0;
+            border: none;
+        }
+
+        /* Blockquotes */
+        blockquote {
+            background: #FFF9E6;
+            border-left: 4px solid var(--warning);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        blockquote strong {
+            color: var(--warning);
+            font-style: normal;
+        }
+
+        /* Info boxes */
+        .note {
+            background: var(--zenni-light);
+            border-left: 4px solid var(--zenni-complementary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .tip {
+            background: #E8F8F5;
+            border-left: 4px solid var(--success);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .warning {
+            background: #FFF3E0;
+            border-left: 4px solid var(--warning);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        /* Priority badges */
+        .priority-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .critical {
+            background: #FFEBEE;
+            color: #C62828;
+        }
+
+        .high {
+            background: #FFF3E0;
+            color: #EF6C00;
+        }
+
+        .medium {
+            background: #E8F5E9;
+            color: #2E7D32;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: var(--white);
+            border: 1px solid var(--zenni-complementary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .checklist h4 {
+            color: var(--zenni-primary);
+            margin-top: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--zenni-primary);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Print styles */
+        @media print {
+            .nav-wrapper {
+                position: static;
+            }
+            
+            .container {
+                box-shadow: none;
+            }
+
+            h2 {
+                page-break-before: always;
+            }
+
+            h2:first-of-type {
+                page-break-before: auto;
+            }
+
+            table {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .content {
+                padding: 2rem 1rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Section dividers */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(to right, var(--zenni-primary), var(--zenni-complementary), transparent);
+            margin: 3rem 0;
+        }
+
+        /* Example boxes */
+        .example {
+            background: #F9F9F9;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .example h4 {
+            color: var(--zenni-primary);
+            margin-top: 0;
+        }
+
+        /* Do/Don't comparison */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-item {
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .comparison-dont {
+            background: #FFEBEE;
+            border-left: 4px solid var(--danger);
+        }
+
+        .comparison-do {
+            background: #E8F5E9;
+            border-left: 4px solid var(--success);
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Workflow diagram */
+        .workflow {
+            background: var(--zenni-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-family: monospace;
+            font-size: 1.1rem;
+            color: var(--zenni-primary);
+            font-weight: 600;
+        }
+
+        /* Emphasis colors */
+        .text-primary {
+            color: var(--zenni-primary);
+        }
+
+        .text-success {
+            color: var(--success);
+        }
+
+        .text-warning {
+            color: var(--warning);
+        }
+
+        .text-danger {
+            color: var(--danger);
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--zenni-light);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 2px solid var(--zenni-complementary);
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            border: none;
+        }
+
+        .toc ol {
+            margin-left: 1.5rem;
+        }
+
+        .toc a {
+            color: var(--zenni-primary);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            color: var(--zenni-dark);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Zenni Optical</h1>
+            <div class="subtitle">Best Practices for Optimizing Generative Engine Outputs</div>
+            <p><strong>Target Systems:</strong> ChatGPT, AI Overviews / AI Mode, Gemini, Perplexity, and similar AI systems</p>
+            
+            <div class="executive-summary">
+                <h2>Executive Summary</h2>
+                <p>This documentation is designed as an internal playbook for how Zenni should create, structure, publish, and iterate on content so that AI systems can:</p>
+                <ol>
+                    <li><strong>Easily find</strong> our content</li>
+                    <li><strong>Understand</strong> it correctly</li>
+                    <li><strong>Surface</strong> it prominently and consistently</li>
+                </ol>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-wrapper">
+            <div class="nav">
+                <div class="nav-title">Quick Navigation</div>
+                <div class="nav-links">
+                    <a href="#section-1">Visibility</a>
+                    <a href="#section-2">AI Expectations</a>
+                    <a href="#section-3">Measurement</a>
+                    <a href="#section-4">Improvements</a>
+                    <a href="#section-5">Content Types</a>
+                    <a href="#section-6">Checklist</a>
+                    <a href="#section-7">Summary</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#section-1">Techniques to Enhance Visibility in ChatGPT & AI Overviews</a>
+                        <ul>
+                            <li>1.1. Think "AI-Readable" First</li>
+                            <li>1.2. Keyword & Intent Optimization</li>
+                            <li>1.3. Content Structuring</li>
+                            <li>1.4. Relevance Criteria</li>
+                        </ul>
+                    </li>
+                    <li><a href="#section-2">Aligning Content with AI Language Model Expectations</a>
+                        <ul>
+                            <li>2.1. What Language Models Prefer</li>
+                            <li>2.2. Provide Canonical Answers</li>
+                            <li>2.3. FAQs Designed for AI</li>
+                            <li>2.4. Metadata & Schema</li>
+                        </ul>
+                    </li>
+                    <li><a href="#section-3">Measuring & Monitoring Performance</a>
+                        <ul>
+                            <li>3.1. Web & Search Analytics</li>
+                            <li>3.2. Chat-based Tools</li>
+                            <li>3.3. Qualitative Monitoring</li>
+                            <li>3.4. KPIs & Success Metrics</li>
+                        </ul>
+                    </li>
+                    <li><a href="#section-4">Iterative Improvements</a>
+                        <ul>
+                            <li>4.1. Continuous Improvement Loop</li>
+                            <li>4.2. Using AI as Reviewers</li>
+                            <li>4.3. A/B Testing</li>
+                            <li>4.4. Feedback from Support</li>
+                        </ul>
+                    </li>
+                    <li><a href="#section-5">Content Types & Topics to Optimize</a>
+                        <ul>
+                            <li>5.1. High-Priority Content Types</li>
+                            <li>5.2. Formats that Work Well</li>
+                            <li>5.3. Topics to Prioritize</li>
+                            <li>5.4. Lower-Priority Content</li>
+                        </ul>
+                    </li>
+                    <li><a href="#section-6">Implementation Checklist</a></li>
+                    <li><a href="#section-7">Key Takeaways</a></li>
+                </ol>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 1 -->
+            <section id="section-1">
+                <h2>1. Techniques to Enhance Visibility in ChatGPT & AI Overviews / AI Mode</h2>
+
+                <h3>1.1. Think "AI-Readable" First: Clear, Explicit, Redundant</h3>
+                
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> AI systems extract and synthesize facts. They work best when:</p>
+                    <ul>
+                        <li>✓ Key facts are <strong>stated explicitly</strong>, not implied</li>
+                        <li>✓ Important information is <strong>repeated consistently</strong> across pages</li>
+                        <li>✓ Language is <strong>plain, unambiguous, and descriptive</strong></li>
+                    </ul>
+                </div>
+
+                <h4>Best Practices</h4>
+
+                <p><strong>1. Use simple, declarative sentences for core facts</strong></p>
+                <div class="comparison">
+                    <div class="comparison-item comparison-dont">
+                        <strong>❌ Instead of:</strong><br>
+                        "No wonder people love our lenses."
+                    </div>
+                    <div class="comparison-item comparison-do">
+                        <strong>✅ Use:</strong><br>
+                        "Zenni Optical offers prescription lenses with blue-light filtering, UV protection, and anti-reflective coatings."
+                    </div>
+                </div>
+
+                <p><strong>2. Mirror the question in your answer</strong></p>
+                <ul>
+                    <li><strong>Question:</strong> "How long does Zenni take to ship orders?"</li>
+                    <li><strong>Answer:</strong> "Zenni Optical typically ships orders within X–Y business days, depending on the product and shipping method."</li>
+                </ul>
+
+                <p><strong>3. State important facts in multiple places</strong></p>
+                <ul>
+                    <li>FAQs</li>
+                    <li>Category pages</li>
+                    <li>Landing pages</li>
+                    <li>Support articles</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Note:</strong> Consistency across all touchpoints helps AI systems recognize and trust your information.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>1.2. Keyword & Intent Optimization for AI Systems</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> AI systems don't just match keywords; they map <strong>user intents</strong> (tasks, problems, questions).</p>
+                </div>
+
+                <h4>Four Types of Intent to Target</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Intent Type</th>
+                            <th>Example Query</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Transactional</strong></td>
+                            <td>"buy affordable prescription glasses online"</td>
+                            <td>Purchase-focused</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Informational</strong></td>
+                            <td>"how to choose the right eyeglass frames"</td>
+                            <td>Learning-focused</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comparative</strong></td>
+                            <td>"Zenni vs Warby Parker lenses quality"</td>
+                            <td>Decision-focused</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Support</strong></td>
+                            <td>"how to adjust Zenni glasses at home"</td>
+                            <td>Problem-solving</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Implementation Tactics</h4>
+
+                <p><strong>1. Map Primary Intents for Zenni</strong></p>
+                <p>Create a master list of high-value queries:</p>
+                <ul>
+                    <li>"cheap prescription glasses online"</li>
+                    <li>"blue light blocking glasses"</li>
+                    <li>"kids glasses durable and flexible"</li>
+                    <li>"progressive lenses online fitting guide"</li>
+                    <li>"how to measure PD at home"</li>
+                </ul>
+
+                <p><strong>2. Include Intent Phrases Naturally In:</strong></p>
+                <ul>
+                    <li>✓ H1/H2 headings</li>
+                    <li>✓ First 1–2 paragraphs</li>
+                    <li>✓ FAQ questions and answers</li>
+                    <li>✓ Schema markup (FAQPage, HowTo, Product)</li>
+                </ul>
+
+                <p><strong>3. Use Long-Tail, Conversational Queries as Headings</strong></p>
+                <p>Examples:</p>
+                <ul>
+                    <li>"How do I choose the right Zenni frame size?"</li>
+                    <li>"Are Zenni blue light glasses safe and effective?"</li>
+                    <li>"Can I use my vision insurance with Zenni?"</li>
+                </ul>
+
+                <p><strong>4. Include Synonyms and Variants</strong></p>
+                <ul>
+                    <li><strong>Eyewear terms:</strong> "eyeglasses" | "glasses" | "spectacles"</li>
+                    <li><strong>Blue light terms:</strong> "blue light blocking" | "blue-light filtering" | "computer glasses"</li>
+                </ul>
+
+                <div class="section-divider"></div>
+
+                <h3>1.3. Content Structuring for AI Overviews / AI Mode</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> AI Overviews prefer <strong>well-structured, authoritative, concise</strong> sources.</p>
+                </div>
+
+                <h4>Structural Guidelines</h4>
+
+                <p><strong>1. One Main Topic Per Page</strong></p>
+                <p>Example page titles:</p>
+                <ul>
+                    <li>"Blue Light Glasses: Complete Guide"</li>
+                    <li>"How to Measure Your Pupillary Distance (PD)"</li>
+                    <li>"Zenni Shipping and Delivery Times"</li>
+                </ul>
+
+                <p><strong>2. Use Semantic Headings with Descriptive Labels</strong></p>
+                <pre><code>H1: "How to Measure Your Pupillary Distance (PD) for Zenni Glasses"
+  H2: "Step-by-Step PD Measurement Guide"
+  H2: "Common PD Measurement Mistakes"
+  H2: "When to Remeasure Your PD"</code></pre>
+
+                <p><strong>3. Make Answers Scannable</strong></p>
+                <ul>
+                    <li>✓ Bullet lists for steps, pros/cons, features</li>
+                    <li>✓ Short paragraphs (2–4 sentences)</li>
+                    <li>✓ Clear numbered instructions</li>
+                    <li>✓ Bold key terms and phrases</li>
+                </ul>
+
+                <div class="example">
+                    <h4>Example: AI-Friendly Answer Format</h4>
+                    <blockquote>
+                        <p><strong>How long does Zenni shipping take?</strong></p>
+                        <p>Zenni Optical typically ships orders within X–Y business days after processing. Shipping times vary based on the shipping method chosen and your location. Expedited shipping options are available for many orders.</p>
+                    </blockquote>
+                    <p><strong>Why this works:</strong> This snippet can be easily lifted by AI as a direct, complete answer.</p>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>1.4. Relevance Criteria: When Will AI Choose Zenni?</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> AI systems quote content that meets four key criteria:</p>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Criteria</th>
+                            <th>What It Means</th>
+                            <th>How to Achieve It</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Topical</strong></td>
+                            <td>Directly answers the user's question</td>
+                            <td>Stay focused on the specific query</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Authoritative</strong></td>
+                            <td>Official or expert source</td>
+                            <td>Use brand voice, cite expertise, show credentials</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Complete</strong></td>
+                            <td>Covers context, edge cases, related questions</td>
+                            <td>Address the full topic, not just basics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consistent</strong></td>
+                            <td>Facts match other reputable sources</td>
+                            <td>Keep numbers/claims identical across pages</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>How to Signal Relevance</h4>
+
+                <p><strong>1. Create Comprehensive Content Hubs</strong></p>
+                <p>For each key topic (e.g., "blue light glasses," "kids frames," "progressive lenses"):</p>
+                <ul>
+                    <li>✓ Dedicated, comprehensive landing page</li>
+                    <li>✓ Supporting FAQ content</li>
+                    <li>✓ Help-center articles</li>
+                    <li>✓ Related blog posts</li>
+                </ul>
+
+                <p><strong>2. Build Strong Internal Linking</strong></p>
+                <ul>
+                    <li>From blogs → main category pages</li>
+                    <li>From FAQs → product pages</li>
+                    <li>From FAQs → policy pages</li>
+                    <li>From guides → related guides</li>
+                </ul>
+
+                <p><strong>3. Maintain Consistency Across All Pages</strong></p>
+                <p>Keep these consistent everywhere:</p>
+                <ul>
+                    <li>Return window policies</li>
+                    <li>Shipping timeframes</li>
+                    <li>Material descriptions</li>
+                    <li>Price ranges</li>
+                    <li>Feature availability</li>
+                </ul>
+
+                <div class="warning">
+                    <strong>Warning:</strong> Inconsistent information confuses AI systems and reduces your visibility.
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 2 -->
+            <section id="section-2">
+                <h2>2. Aligning Content with AI Language Model Expectations</h2>
+
+                <h3>2.1. What Language Models Prefer</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Language models are trained on high-quality web content and prefer:</p>
+                    <ul>
+                        <li>✓ <strong>Educational, explanatory, and neutral</strong> tone</li>
+                        <li>✓ <strong>Well-structured</strong> content (like tutorials or guides)</li>
+                        <li>✓ <strong>Minimal fluff</strong> and promotional language</li>
+                    </ul>
+                </div>
+
+                <h4>Tone & Style Guidelines</h4>
+
+                <p><strong>Do's and Don'ts</strong></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>❌ Avoid</th>
+                            <th>✅ Use Instead</th>
+                            <th>Why</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"Our unbeatable frames are the most stylish!"</td>
+                            <td>"Zenni frames combine affordability with a wide range of modern and classic styles."</td>
+                            <td>Factual, not hyperbolic</td>
+                        </tr>
+                        <tr>
+                            <td>"Amazing technology!"</td>
+                            <td>"Blue-light filtering technology reduces eye strain."</td>
+                            <td>Specific benefits</td>
+                        </tr>
+                        <tr>
+                            <td>"The best in the industry!"</td>
+                            <td>"Zenni offers over 4,000 frame styles at prices starting at $6.95."</td>
+                            <td>Quantifiable facts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Always Define Technical Terms Explicitly</strong></p>
+                <div class="example">
+                    <p>Example:</p>
+                    <blockquote>
+                        <em>Progressive lenses</em> are multifocal lenses that provide clear vision at near, intermediate, and far distances without visible lines.
+                    </blockquote>
+                </div>
+
+                <p><strong>Strike the Right Balance</strong></p>
+                <ul>
+                    <li>Educational expert tone + light brand personality</li>
+                    <li>User benefits + clarity over sales copy</li>
+                    <li>Helpful information + subtle call-to-action</li>
+                </ul>
+
+                <div class="section-divider"></div>
+
+                <h3>2.2. Provide Direct, Canonical Answers to Common Questions</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Language models summarize "what most sources say." Make Zenni the best source by being:</p>
+                    <ol>
+                        <li>The <strong>clearest</strong> explanation</li>
+                        <li>The <strong>most complete</strong> and up-to-date</li>
+                        <li>The <strong>easiest to quote</strong></li>
+                    </ol>
+                </div>
+
+                <h4>Content Structure Formula</h4>
+
+                <p><strong>For Every High-Value Topic:</strong></p>
+                <div class="workflow">
+                    [Concise One-Paragraph Answer]<br>
+                    ↓<br>
+                    [Deeper Explanation]<br>
+                    ↓<br>
+                    [Supporting Details: mechanics, pros/cons, use cases]
+                </div>
+
+                <div class="tip">
+                    <strong>Pro Tip:</strong> The first paragraph should be quotable as a standalone answer.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>2.3. FAQs Designed for AI</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> FAQs are AI gold because they mirror natural Q&A formats and are easily quoted.</p>
+                </div>
+
+                <h4>Why FAQs Are Powerful for AI</h4>
+                <ul>
+                    <li>✓ AI systems naturally work in Q&A format</li>
+                    <li>✓ Direct answers are easily lifted into responses</li>
+                    <li>✓ Question phrasing matches user queries</li>
+                </ul>
+
+                <h4>FAQ Best Practices</h4>
+
+                <p><strong>1. Use Full, Natural-Language Questions</strong></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>❌ Weak Question</th>
+                            <th>✅ Strong Question</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"Return policy?"</td>
+                            <td>"Can I return Zenni glasses if they do not fit?"</td>
+                        </tr>
+                        <tr>
+                            <td>"Virtual try-on"</td>
+                            <td>"How does Zenni's virtual try-on work?"</td>
+                        </tr>
+                        <tr>
+                            <td>"Shipping time"</td>
+                            <td>"How long will it take for my Zenni glasses to arrive?"</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>2. Keep Answers in the "Sweet Spot" Length</strong></p>
+                <ul>
+                    <li><strong>Target:</strong> 40–120 words</li>
+                    <li><strong>Why:</strong> Long enough to be informative, short enough for direct quotes</li>
+                </ul>
+
+                <p><strong>3. Add FAQ Schema Markup</strong></p>
+                <pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How long does Zenni shipping take?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Your answer here..."
+    }
+  }]
+}
+&lt;/script&gt;</code></pre>
+
+                <div class="note">
+                    <strong>Impact:</strong> Schema markup reinforces question–answer pairs for AI systems.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>2.4. Metadata, Schema, and Technical Signals</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> While AI doesn't rely solely on SEO, traditional discoverability signals still matter.</p>
+                </div>
+
+                <h4>Schema Types to Implement</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Schema Type</th>
+                            <th>When to Use</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>FAQPage</strong></td>
+                            <td>Any page with Q&A content</td>
+                            <td>Help articles, product FAQs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HowTo</strong></td>
+                            <td>Step-by-step guides</td>
+                            <td>"How to measure PD"</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Product</strong></td>
+                            <td>Product pages</td>
+                            <td>Individual frame pages</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organization</strong></td>
+                            <td>About/homepage</td>
+                            <td>Company information</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Title and Meta Description Formula</h4>
+
+                <p><strong>Title Tag Structure:</strong></p>
+                <pre><code>[Primary Keyword/Question] – [Brand Name]</code></pre>
+
+                <p><strong>Meta Description Structure:</strong></p>
+                <pre><code>[Brief answer or value proposition]. [What page covers]. [Brand name].</code></pre>
+
+                <div class="example">
+                    <h4>Example: Complete Meta Package</h4>
+                    <p><strong>Page Topic:</strong> How to measure pupillary distance</p>
+                    <pre><code>&lt;title&gt;How to Measure PD (Pupillary Distance) at Home – Zenni Optical&lt;/title&gt;
+
+&lt;meta name="description" content="Learn how to measure your pupillary distance (PD) at home with simple tools. Step-by-step guide, tips, and FAQs from Zenni Optical."&gt;</code></pre>
+                    <p><strong>Why this works:</strong></p>
+                    <ul>
+                        <li>Includes main query ("measure PD")</li>
+                        <li>Summarizes page value</li>
+                        <li>Natural, conversational tone</li>
+                        <li>Includes brand name for trust</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 3 -->
+            <section id="section-3">
+                <h2>3. Measuring & Monitoring Performance within AI Systems</h2>
+
+                <div class="warning">
+                    <p><strong>Reality Check:</strong> Direct analytics on "how often ChatGPT shows our content" are limited today.</p>
+                    <p><strong>Solution:</strong> Use <strong>proxy metrics</strong> and structured experiments.</p>
+                </div>
+
+                <h3>3.1. Web & Search Analytics</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Use standard analytics to approximate AI-driven performance.</p>
+                </div>
+
+                <h4>Key Metrics to Track</h4>
+
+                <p><strong>1. Organic Traffic Patterns</strong></p>
+                <ul>
+                    <li>Monitor traffic trends to educational/FAQ pages</li>
+                    <li>Track entrance pages for question-based queries</li>
+                    <li>Compare traffic patterns before/after content updates</li>
+                </ul>
+
+                <p><strong>2. Search Console Insights</strong></p>
+                <p>Track these specific patterns:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>What to Look For</th>
+                            <th>What It Means</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Question-style queries</strong></td>
+                            <td>"how to measure PD," "what are blue light glasses"</td>
+                            <td>Users asking AI-friendly questions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impressions up, clicks flat/down</strong></td>
+                            <td>High impressions, low CTR</td>
+                            <td>AI may be answering in SERP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Featured snippet losses</strong></td>
+                            <td>Dropping from position 0</td>
+                            <td>AI Overviews may be replacing snippets</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>3. Traffic Source Analysis</strong></p>
+                <p>Monitor for:</p>
+                <ul>
+                    <li>Referral traffic from AI platforms (when identifiable)</li>
+                    <li>Changes in direct traffic (users may verify AI answers)</li>
+                    <li>Branded search increases (AI mentions driving awareness)</li>
+                </ul>
+
+                <div class="section-divider"></div>
+
+                <h3>3.2. Chat-based and AI-driven Tools</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Use your own AI tools as a testing ground for optimization.</p>
+                </div>
+
+                <h4>What to Track</h4>
+
+                <p><strong>1. Referral Traffic</strong></p>
+                <ul>
+                    <li>Monitor referral sources that may be AI products</li>
+                    <li>Track any identifiable AI platform traffic</li>
+                    <li>Note patterns in user behavior from these sources</li>
+                </ul>
+
+                <p><strong>2. On-Site Chatbot/Virtual Assistant Analytics</strong></p>
+                <p>If Zenni has a chatbot, track:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>What It Tells You</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Top questions asked</strong></td>
+                            <td>Content gaps to fill</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Deflection rates</strong></td>
+                            <td>Answer effectiveness</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Satisfaction scores</strong></td>
+                            <td>Answer quality</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Escalation patterns</strong></td>
+                            <td>Where automation fails</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note">
+                    <strong>Insight:</strong> Questions users ask your chatbot mirror what they ask external AI systems.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>3.3. Qualitative Monitoring</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> AI systems update constantly. Manual monitoring is essential.</p>
+                </div>
+
+                <h4>Build an AI Visibility Dashboard</h4>
+
+                <p><strong>Step 1: Create Your Master Query List</strong></p>
+                <p>Organize by category:</p>
+
+                <p><strong>Brand Queries:</strong></p>
+                <ul>
+                    <li>"what is Zenni Optical"</li>
+                    <li>"is Zenni legit"</li>
+                    <li>"Zenni Optical reviews"</li>
+                </ul>
+
+                <p><strong>Product Queries:</strong></p>
+                <ul>
+                    <li>"buy cheap prescription glasses online"</li>
+                    <li>"best kids glasses for sports"</li>
+                    <li>"blue light blocking glasses"</li>
+                </ul>
+
+                <p><strong>Support Queries:</strong></p>
+                <ul>
+                    <li>"Zenni shipping time"</li>
+                    <li>"how to measure PD"</li>
+                    <li>"Zenni return policy"</li>
+                </ul>
+
+                <p><strong>Comparative Queries:</strong></p>
+                <ul>
+                    <li>"Zenni vs Warby Parker"</li>
+                    <li>"are Zenni lenses good quality"</li>
+                    <li>"Zenni vs LensCrafters price"</li>
+                </ul>
+
+                <p><strong>Step 2: Test Regularly Across Platforms</strong></p>
+                <p>Test quarterly (minimum) in:</p>
+                <ul>
+                    <li>✓ ChatGPT / GPT-based search modes</li>
+                    <li>✓ Google AI Overviews / Gemini</li>
+                    <li>✓ Perplexity</li>
+                    <li>✓ Other emerging AI search tools</li>
+                </ul>
+
+                <p><strong>Step 3: Document Results</strong></p>
+                <p>For each query, record:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>What to Note</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Mentioned?</strong></td>
+                            <td>Yes/No/Partially</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Accuracy</strong></td>
+                            <td>Correct/Outdated/Wrong</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prominence</strong></td>
+                            <td>First/Middle/Last/Not shown</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Context</strong></td>
+                            <td>Positive/Neutral/Negative</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Competitors</strong></td>
+                            <td>Who else is mentioned?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip">
+                    <strong>Pro Tip:</strong> Assign this monitoring to a team member as a recurring quarterly task.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>3.4. KPIs & Success Metrics</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> While direct AI metrics are limited, you can define clear, measurable KPIs.</p>
+                </div>
+
+                <h4>Three-Tier KPI Framework</h4>
+
+                <p><strong>TIER 1: Content-Level KPIs</strong></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                            <th>What It Measures</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Organic traffic to help/guide pages</strong></td>
+                            <td>↑ 20% QoQ</td>
+                            <td>Content discoverability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Time on page</strong></td>
+                            <td>&gt; 2 minutes</td>
+                            <td>Content engagement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scroll depth</strong></td>
+                            <td>&gt; 75% average</td>
+                            <td>Content completeness</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Click-through to product pages</strong></td>
+                            <td>&gt; 10% CTR</td>
+                            <td>Content-to-conversion path</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>TIER 2: Brand & Support KPIs</strong></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                            <th>What It Measures</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Support ticket reduction</strong></td>
+                            <td>↓ 15% for improved topics</td>
+                            <td>Content effectiveness</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Branded informational searches</strong></td>
+                            <td>↑ 25% QoQ</td>
+                            <td>AI-driven brand awareness</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Return rate on FAQ topics</strong></td>
+                            <td>&lt; 5% bounce rate</td>
+                            <td>Answer quality</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>TIER 3: Experiment-Level KPIs</strong></p>
+                <p>For A/B tests and content updates, track:</p>
+
+                <p><strong>Before/After Comparison:</strong></p>
+                <ul>
+                    <li>Impressions: ↑/↓ %</li>
+                    <li>Clicks: ↑/↓ %</li>
+                    <li>Organic traffic: ↑/↓ %</li>
+                    <li>Conversions: ↑/↓ %</li>
+                    <li>Average position: ↑/↓ rank</li>
+                </ul>
+
+                <p><strong>Testing Timeline:</strong></p>
+                <ul>
+                    <li><strong>Week 0:</strong> Baseline measurement</li>
+                    <li><strong>Week 1:</strong> Content update deployed</li>
+                    <li><strong>Week 4-8:</strong> Initial results</li>
+                    <li><strong>Week 12:</strong> Sustained impact assessment</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Important:</strong> Allow 4-8 weeks for AI systems to index and incorporate new content.
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 4 -->
+            <section id="section-4">
+                <h2>4. Iterative Improvements Based on Metrics & AI Feedback</h2>
+
+                <h3>4.1. Continuous Content Improvement Loop</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Treat AI optimization as an ongoing cycle, not a one-time project.</p>
+                </div>
+
+                <h4>The 5-Step Improvement Cycle</h4>
+
+                <div class="workflow">
+                    1. DISCOVER → 2. DRAFT/IMPROVE → 3. DEPLOY → 4. MEASURE → 5. REFINE<br>
+                    ↓<br>
+                    [BACK TO 1]
+                </div>
+
+                <p><strong>Step 1: DISCOVER</strong></p>
+                <p>Identify high-value topics through:</p>
+                <ul>
+                    <li>✓ Keyword research tools</li>
+                    <li>✓ Search Console data</li>
+                    <li>✓ Support ticket analysis</li>
+                    <li>✓ AI output observations</li>
+                    <li>✓ User feedback/reviews</li>
+                    <li>✓ Competitor gap analysis</li>
+                </ul>
+
+                <p><strong>Step 2: DRAFT / IMPROVE</strong></p>
+                <p>Create or revise content using:</p>
+                <ul>
+                    <li>✓ This playbook's guidelines</li>
+                    <li>✓ Competitor content analysis</li>
+                    <li>✓ Subject matter expert input</li>
+                    <li>✓ User language and phrasing</li>
+                </ul>
+
+                <p><strong>Step 3: DEPLOY</strong></p>
+                <p>Publish with technical best practices:</p>
+                <ul>
+                    <li>✓ Schema markup implemented</li>
+                    <li>✓ Clear, descriptive URLs</li>
+                    <li>✓ Internal linking in place</li>
+                    <li>✓ Mobile-optimized</li>
+                    <li>✓ Fast page load times</li>
+                </ul>
+
+                <p><strong>Step 4: MEASURE</strong></p>
+                <p>Monitor for <strong>4–8 weeks</strong>:</p>
+                <ul>
+                    <li>✓ Traffic trends</li>
+                    <li>✓ Engagement metrics</li>
+                    <li>✓ AI response accuracy</li>
+                    <li>✓ User behavior patterns</li>
+                    <li>✓ Conversion impact</li>
+                </ul>
+
+                <p><strong>Step 5: REFINE</strong></p>
+                <p>Adjust based on:</p>
+                <ul>
+                    <li>✓ Performance data</li>
+                    <li>✓ New user questions</li>
+                    <li>✓ AI system changes</li>
+                    <li>✓ Competitive landscape shifts</li>
+                </ul>
+
+                <div class="note">
+                    <strong>Timeline:</strong> Complete one full cycle every quarter for major topics.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>4.2. Using AI Systems as "Reviewers"</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Use AI tools themselves as test harnesses for your content.</p>
+                </div>
+
+                <h4>Testing Workflow</h4>
+
+                <p><strong>Step 1: Craft Test Prompts</strong></p>
+                <p>After publishing/updating content, test with role-based prompts.</p>
+
+                <p><strong>Step 2: Evaluate Results</strong></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Question</th>
+                            <th>Yes</th>
+                            <th>No</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Is Zenni mentioned?</td>
+                            <td>☐</td>
+                            <td>☐</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Is Zenni mentioned first?</td>
+                            <td>☐</td>
+                            <td>☐</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Are facts accurate and current?</td>
+                            <td>☐</td>
+                            <td>☐</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Is tone positive or neutral?</td>
+                            <td>☐</td>
+                            <td>☐</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Are competitors mentioned?</td>
+                            <td>☐</td>
+                            <td>☐</td>
+                            <td>Who?</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Step 3: Take Action on Gaps</strong></p>
+                <p>If Zenni is absent or misrepresented:</p>
+
+                <p><strong>✓ Improve canonical pages:</strong></p>
+                <ul>
+                    <li>Provide clearer, more explicit definitions</li>
+                    <li>Emphasize key differentiators (price, selection, quality)</li>
+                    <li>Add specific facts and numbers</li>
+                </ul>
+
+                <p><strong>✓ Enhance FAQ content:</strong></p>
+                <ul>
+                    <li>Address misconceptions directly</li>
+                    <li>Use exact question phrasing from user queries</li>
+                </ul>
+
+                <p><strong>✓ Build topical authority:</strong></p>
+                <ul>
+                    <li>Create more supporting content</li>
+                    <li>Strengthen internal linking</li>
+                    <li>Update outdated information</li>
+                </ul>
+
+                <p><strong>Step 4: Schedule Regular Testing</strong></p>
+                <ul>
+                    <li><strong>Frequency:</strong> Quarterly (minimum)</li>
+                    <li><strong>Platforms:</strong> ChatGPT, Gemini, Perplexity</li>
+                    <li><strong>Documentation:</strong> Log all results in your AI visibility dashboard</li>
+                </ul>
+
+                <div class="section-divider"></div>
+
+                <h3>4.3. A/B Content and Messaging Tests</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Test systematically to find what works best for AI and users.</p>
+                </div>
+
+                <h4>What to A/B Test</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Test Type</th>
+                            <th>Variant A</th>
+                            <th>Variant B</th>
+                            <th>Measure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Opening Paragraph</strong></td>
+                            <td>Short, direct answer (40-60 words)</td>
+                            <td>Descriptive intro (100-150 words)</td>
+                            <td>Time on page, engagement, AI quotability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FAQ Density</strong></td>
+                            <td>3-5 FAQs</td>
+                            <td>10-15 FAQs</td>
+                            <td>Scroll depth, time on page, support ticket reduction</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Heading Style</strong></td>
+                            <td>Conversational questions</td>
+                            <td>Short SEO-style headings</td>
+                            <td>Engagement, click-through to products</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Content Depth</strong></td>
+                            <td>Comprehensive (2000+ words)</td>
+                            <td>Concise (800-1200 words)</td>
+                            <td>Completion rate, conversion, AI mentions</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Apply Learnings</h4>
+                <ul>
+                    <li>✓ Document winning variants</li>
+                    <li>✓ Create templates based on winners</li>
+                    <li>✓ Roll out to similar topics</li>
+                    <li>✓ Update content guidelines</li>
+                </ul>
+
+                <div class="section-divider"></div>
+
+                <h3>4.4. Feedback from Support & Social Channels</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Support channels reveal real-world misunderstandings that AI may perpetuate.</p>
+                </div>
+
+                <h4>Mine Support Channels for Content Opportunities</h4>
+
+                <p><strong>Sources to Monitor:</strong></p>
+                <ol>
+                    <li><strong>Support Tickets</strong> - Frequently asked questions, recurring confusion points</li>
+                    <li><strong>Social Media</strong> - Comments, DMs, user questions</li>
+                    <li><strong>Reviews</strong> - Common complaints, unexpected issues</li>
+                    <li><strong>Chatbot Logs</strong> - Failed queries, escalated conversations</li>
+                </ol>
+
+                <h4>Common Confusion Points to Address</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Confusion Topic</th>
+                            <th>Content Solution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"Are these real prescriptions?"</td>
+                            <td>Clear explanation of prescription process</td>
+                        </tr>
+                        <tr>
+                            <td>"Can I use HSA/FSA?"</td>
+                            <td>Dedicated payment options FAQ</td>
+                        </tr>
+                        <tr>
+                            <td>"Can I return if my prescription is wrong?"</td>
+                            <td>Remake vs. return policy clarity</td>
+                        </tr>
+                        <tr>
+                            <td>"How accurate are online measurements?"</td>
+                            <td>PD measurement guide + accuracy stats</td>
+                        </tr>
+                        <tr>
+                            <td>"Are lenses as good as in-store?"</td>
+                            <td>Lens quality and testing information</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip">
+                    <strong>Success Indicator:</strong> Decrease in support tickets for topics where content has been improved.
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 5 -->
+            <section id="section-5">
+                <h2>5. Scope: Content Types, Formats, and Topics to Optimize</h2>
+
+                <h3>5.1. High-Priority Content Types</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Focus optimization efforts where AI systems look for authoritative information.</p>
+                </div>
+
+                <h4>Priority Matrix</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Content Type</th>
+                            <th>AI Value</th>
+                            <th>Examples</th>
+                            <th>Why AI Prefers It</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Core Informational Guides</strong></td>
+                            <td><span class="priority-badge critical">🔴 CRITICAL</span></td>
+                            <td>"How to Choose Glasses," "Progressive Lens Guide"</td>
+                            <td>Comprehensive, educational, quotable</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Help Center / Support</strong></td>
+                            <td><span class="priority-badge critical">🔴 CRITICAL</span></td>
+                            <td>Shipping, returns, PD measurement</td>
+                            <td>Direct answers to common questions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Category & Landing Pages</strong></td>
+                            <td><span class="priority-badge high">🟡 HIGH</span></td>
+                            <td>Men's/Women's/Kids' glasses, specialty eyewear</td>
+                            <td>Product discovery and comparison</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brand & About Content</strong></td>
+                            <td><span class="priority-badge high">🟡 HIGH</span></td>
+                            <td>"About Zenni," "How We Keep Prices Low"</td>
+                            <td>Authority and trust signals</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note">
+                    <strong>Key Insight:</strong> These content types are most likely to be referenced by AI systems for <strong>factual and comparative</strong> answers.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>5.2. Formats that Work Well for AI</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> AI systems extract information best from structured, scannable formats.</p>
+                </div>
+
+                <h4>Top 4 AI-Friendly Formats</h4>
+
+                <div class="example">
+                    <h4>1. Q&A / FAQ Pages 🏆</h4>
+                    <p><strong>Structure:</strong></p>
+                    <pre><code>Question: [Full, natural language question]
+Answer: [40-120 word direct answer]</code></pre>
+                    <p><strong>Best for:</strong> Support topics, common user questions, policy clarifications</p>
+                    <p><strong>Why AI loves it:</strong> Mirrors AI's natural Q&A format, easy to extract and quote</p>
+                </div>
+
+                <div class="example">
+                    <h4>2. How-To Guides 🏆</h4>
+                    <p><strong>Structure:</strong></p>
+                    <pre><code>Introduction (1 paragraph)
+Materials/Requirements (bulleted list)
+Step-by-step instructions (numbered)
+Tips and troubleshooting (bulleted)
+FAQs (3-5 questions)</code></pre>
+                    <p><strong>Best for:</strong> PD measurement, frame adjustments, ordering process</p>
+                    <p><strong>Why AI loves it:</strong> Clear, sequential structure, action-oriented</p>
+                </div>
+
+                <div class="example">
+                    <h4>3. Long-Form Explainers with Summaries 🏆</h4>
+                    <p><strong>Structure:</strong></p>
+                    <pre><code>H1: [Topic]
+TL;DR / Key Takeaways (3-6 bullets)
+H2: What is [Topic]? (definition)
+H2: How [Topic] Works (mechanics)
+H2: Benefits and Considerations
+H2: Common Questions (FAQ)</code></pre>
+                    <p><strong>Best for:</strong> Blue light glasses, lens types explained, frame material guides</p>
+                    <p><strong>Why AI loves it:</strong> Summary provides quick answers, depth demonstrates authority</p>
+                </div>
+
+                <div class="example">
+                    <h4>4. Comparison Tables 🏆</h4>
+                    <p><strong>Best for:</strong> Product comparisons, feature differences, decision-making</p>
+                    <p><strong>Why AI loves it:</strong> Structured data, easy to parse, comparative queries</p>
+                </div>
+
+                <div class="tip">
+                    <strong>Pro Tip:</strong> This template works because it answers user questions at multiple depths—from quick TL;DR to comprehensive deep-dive.
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3>5.3. Topics to Prioritize for Zenni</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Focus on topics that are high-intent, frequently misunderstood, or commonly asked in AI systems.</p>
+                </div>
+
+                <h4>Prioritization Framework</h4>
+
+                <p><strong>Priority Level 1: CRITICAL</strong> <span class="priority-badge critical">🔴</span></p>
+                <p>These drive revenue OR reduce support load significantly:</p>
+
+                <p><strong>Lens Education:</strong></p>
+                <ul>
+                    <li>How to choose between single vision, bifocal, progressive, readers</li>
+                    <li>Understanding lens coatings (anti-reflective, scratch-resistant, UV)</li>
+                    <li>Blue light filtering: what it is, who needs it, effectiveness</li>
+                </ul>
+
+                <p><strong>Measurement & Fitting:</strong></p>
+                <ul>
+                    <li>How to measure PD at home (step-by-step)</li>
+                    <li>How to choose frame size</li>
+                    <li>Understanding prescription terms</li>
+                </ul>
+
+                <p><strong>Policies & Process:</strong></p>
+                <ul>
+                    <li>Shipping speeds and tracking</li>
+                    <li>Return and remake policies</li>
+                    <li>Prescription verification process</li>
+                    <li>Virtual try-on guide</li>
+                </ul>
+
+                <p><strong>Priority Level 2: HIGH</strong> <span class="priority-badge high">🟡</span></p>
+                <p>These support brand awareness and consideration:</p>
+
+                <p><strong>Specialty Use Cases:</strong></p>
+                <ul>
+                    <li>Gaming glasses (blue light + anti-glare)</li>
+                    <li>Office/computer glasses</li>
+                    <li>Kids' glasses (durable, flexible)</li>
+                    <li>Sports glasses (impact-resistant)</li>
+                    <li>Safety glasses (ANSI compliance)</li>
+                </ul>
+
+                <p><strong>Priority Level 3: MEDIUM</strong> <span class="priority-badge medium">🟢</span></p>
+                <p>These support long-tail queries:</p>
+
+                <p><strong>Style Guides:</strong></p>
+                <ul>
+                    <li>Frames for face shape</li>
+                    <li>Frame color selection</li>
+                    <li>Fashion trends in eyewear</li>
+                </ul>
+
+                <h4>Topic Selection Checklist</h4>
+
+                <p>Before creating content, ask:</p>
+                <ul>
+                    <li>☐ Is this a high-volume search query?</li>
+                    <li>☐ Do customers frequently ask support about this?</li>
+                    <li>☐ Is there confusion or misinformation about this topic?</li>
+                    <li>☐ Will answering this drive purchases or reduce support load?</li>
+                    <li>☐ Do competitors have content on this? Can we do better?</li>
+                    <li>☐ Is this likely to be asked in AI systems?</li>
+                </ul>
+
+                <p><strong>If 4+ boxes checked:</strong> Prioritize this topic</p>
+
+                <div class="section-divider"></div>
+
+                <h3>5.4. Out-of-Scope or Lower-Priority Content</h3>
+
+                <div class="core-principle">
+                    <p><strong>Core Principle:</strong> Not all content helps AI visibility. Focus resources wisely.</p>
+                </div>
+
+                <h4>Resource Allocation Guideline</h4>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Priority Level</th>
+                            <th>% of Effort</th>
+                            <th>Content Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="priority-badge critical">High Priority</span></td>
+                            <td><strong>80%</strong></td>
+                            <td>Educational and support content</td>
+                        </tr>
+                        <tr>
+                            <td><span class="priority-badge high">Medium Priority</span></td>
+                            <td><strong>15%</strong></td>
+                            <td>Style guides and advanced topics</td>
+                        </tr>
+                        <tr>
+                            <td><span class="priority-badge medium">Lower Priority</span></td>
+                            <td><strong>5%</strong></td>
+                            <td>Promotional content optimization</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 6 -->
+            <section id="section-6">
+                <h2>6. Concrete Implementation Checklist</h2>
+
+                <p>Use this checklist for every new piece of content or content update.</p>
+
+                <div class="checklist">
+                    <h3>Phase 1: Topic Planning & Research</h3>
+                    <p><strong>Before Writing:</strong></p>
+                    <ul>
+                        <li>☐ Identify target user query/intent from research</li>
+                        <li>☐ Check current AI responses for this topic</li>
+                        <li>☐ Analyze competitor content for gaps</li>
+                        <li>☐ Review support tickets for common questions</li>
+                        <li>☐ Add topic to central content calendar</li>
+                        <li>☐ Confirm topic aligns with business priorities</li>
+                    </ul>
+                    <p><strong>Success Criteria:</strong> Clear understanding of what users ask and what AI currently answers</p>
+                </div>
+
+                <div class="checklist">
+                    <h3>Phase 2: Content Creation</h3>
+                    <p><strong>Content Structure:</strong></p>
+                    <ul>
+                        <li>☐ Start with concise summary answer or TL;DR (40-80 words)</li>
+                        <li>☐ Use descriptive, question-like H2/H3 headings</li>
+                        <li>☐ Include primary keyword in H1 and first paragraph</li>
+                        <li>☐ Incorporate long-tail phrases naturally throughout</li>
+                        <li>☐ Keep paragraphs short (2-4 sentences)</li>
+                        <li>☐ Use bullet points and numbered lists for scannability</li>
+                    </ul>
+
+                    <p><strong>FAQ Section:</strong></p>
+                    <ul>
+                        <li>☐ Include 5-10 relevant FAQs</li>
+                        <li>☐ Write full, natural-language questions</li>
+                        <li>☐ Keep answers 40-120 words each</li>
+                        <li>☐ Address common misconceptions</li>
+                        <li>☐ Include at least one comparative question if relevant</li>
+                    </ul>
+
+                    <p><strong>Content Quality:</strong></p>
+                    <ul>
+                        <li>☐ Define all technical terms explicitly</li>
+                        <li>☐ Use educational, neutral tone (not overly promotional)</li>
+                        <li>☐ State key facts explicitly (don't imply)</li>
+                        <li>☐ Include specific numbers and data where possible</li>
+                        <li>☐ Add examples and use cases</li>
+                        <li>☐ Ensure consistency with other Zenni content</li>
+                    </ul>
+                </div>
+
+                <div class="checklist">
+                    <h3>Phase 3: Technical Setup</h3>
+                    <p><strong>On-Page SEO:</strong></p>
+                    <ul>
+                        <li>☐ Optimize title tag (include primary keyword + brand)</li>
+                        <li>☐ Write compelling meta description (150-160 characters)</li>
+                        <li>☐ Ensure clean, descriptive URL slug</li>
+                        <li>☐ Add descriptive alt text to all images</li>
+                        <li>☐ Confirm mobile-responsive formatting</li>
+                        <li>☐ Test page load speed (target &lt; 3 seconds)</li>
+                    </ul>
+
+                    <p><strong>Schema Markup:</strong></p>
+                    <ul>
+                        <li>☐ Add FAQPage schema if page has FAQs</li>
+                        <li>☐ Add HowTo schema for step-by-step guides</li>
+                        <li>☐ Add Product schema for product pages</li>
+                        <li>☐ Validate schema with Google's Rich Results Test</li>
+                    </ul>
+
+                    <p><strong>Internal Linking:</strong></p>
+                    <ul>
+                        <li>☐ Link from this page to 3-5 relevant pages</li>
+                        <li>☐ Link to this page from 3-5 relevant existing pages</li>
+                        <li>☐ Use descriptive anchor text (not "click here")</li>
+                        <li>☐ Prioritize links to product/conversion pages</li>
+                    </ul>
+                </div>
+
+                <div class="checklist">
+                    <h3>Phase 4: Measurement & Monitoring</h3>
+                    <p><strong>Set Up Tracking (Week 0):</strong></p>
+                    <ul>
+                        <li>☐ Record baseline metrics (traffic, rankings, engagement)</li>
+                        <li>☐ Set up event tracking for key interactions</li>
+                        <li>☐ Create dashboard or spreadsheet for this content</li>
+                        <li>☐ Add page to AI visibility testing log</li>
+                        <li>☐ Schedule 4-week and 8-week check-ins</li>
+                    </ul>
+
+                    <p><strong>AI System Testing:</strong></p>
+                    <ul>
+                        <li>☐ Test in ChatGPT with relevant prompts (Week 4, Week 12)</li>
+                        <li>☐ Test in Google AI Overviews / Gemini (Week 4, Week 12)</li>
+                        <li>☐ Test in Perplexity if relevant (Week 4, Week 12)</li>
+                        <li>☐ Document whether Zenni is mentioned and how</li>
+                        <li>☐ Note accuracy and prominence of mentions</li>
+                    </ul>
+                </div>
+
+                <div class="checklist">
+                    <h3>Phase 5: Iteration & Refinement</h3>
+                    <p><strong>Review Performance (After 4-8 Weeks):</strong></p>
+                    <ul>
+                        <li>☐ Compare metrics to baseline and goals</li>
+                        <li>☐ Identify which sections get most engagement</li>
+                        <li>☐ Review AI system test results</li>
+                        <li>☐ Check for new related queries in Search Console</li>
+                        <li>☐ Analyze support ticket trends for this topic</li>
+                    </ul>
+
+                    <p><strong>Close the Loop:</strong></p>
+                    <ul>
+                        <li>☐ Re-test in AI systems after updates</li>
+                        <li>☐ Compare before/after performance</li>
+                        <li>☐ Document learnings for future content</li>
+                        <li>☐ Update content templates based on insights</li>
+                        <li>☐ Share successful patterns with team</li>
+                    </ul>
+                </div>
+
+                <div class="checklist">
+                    <h3>Quick Reference: Pre-Publish Checklist</h3>
+                    <p><strong>Content:</strong></p>
+                    <ul>
+                        <li>☐ TL;DR at top ✓</li>
+                        <li>☐ Question-like headings ✓</li>
+                        <li>☐ 5-10 FAQs included ✓</li>
+                        <li>☐ Short paragraphs and lists ✓</li>
+                        <li>☐ Technical terms defined ✓</li>
+                        <li>☐ Consistent with other pages ✓</li>
+                    </ul>
+
+                    <p><strong>Technical:</strong></p>
+                    <ul>
+                        <li>☐ Title tag optimized ✓</li>
+                        <li>☐ Meta description written ✓</li>
+                        <li>☐ Schema markup added ✓</li>
+                        <li>☐ Internal links (in + out) ✓</li>
+                        <li>☐ Images have alt text ✓</li>
+                        <li>☐ Mobile-responsive ✓</li>
+                    </ul>
+
+                    <p><strong>Launch:</strong></p>
+                    <ul>
+                        <li>☐ Baseline metrics recorded ✓</li>
+                        <li>☐ Added to tracking dashboard ✓</li>
+                        <li>☐ AI testing scheduled ✓</li>
+                        <li>☐ Team notified ✓</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="section-divider"></div>
+
+            <!-- Section 7 -->
+            <section id="section-7">
+                <h2>Summary of Key Points</h2>
+
+                <h3>The Five Pillars of AI-Optimized Content</h3>
+
+                <div class="example">
+                    <h4>1. Write for AI and Humans Together 🤝</h4>
+                    <ul>
+                        <li>Use explicit, structured, educational content</li>
+                        <li>State facts clearly, don't imply</li>
+                        <li>Repeat important information consistently</li>
+                        <li>Balance helpfulness with brand personality</li>
+                    </ul>
+                    <p><strong>Key Takeaway:</strong> AI systems reward clarity and comprehensiveness</p>
+                </div>
+
+                <div class="example">
+                    <h4>2. Target Intents, Not Just Keywords 🎯</h4>
+                    <ul>
+                        <li><strong>Transactional:</strong> "buy affordable prescription glasses"</li>
+                        <li><strong>Informational:</strong> "how to measure PD at home"</li>
+                        <li><strong>Comparative:</strong> "Zenni vs Warby Parker"</li>
+                        <li><strong>Support:</strong> "Zenni return policy"</li>
+                    </ul>
+                    <p><strong>Key Takeaway:</strong> Match the user's underlying need, not just their words</p>
+                </div>
+
+                <div class="example">
+                    <h4>3. Use Strong Content Structure 📐</h4>
+                    <ul>
+                        <li>Clear, descriptive headings (H1, H2, H3)</li>
+                        <li>TL;DR or summary at top</li>
+                        <li>FAQ sections with 40-120 word answers</li>
+                        <li>Step-by-step guides for how-tos</li>
+                        <li>Comparison tables for decisions</li>
+                        <li>Short paragraphs and bullet lists</li>
+                    </ul>
+                    <p><strong>Key Takeaway:</strong> Structure makes content scannable for AI and users</p>
+                </div>
+
+                <div class="example">
+                    <h4>4. Measure with Proxy Metrics 📊</h4>
+                    <ul>
+                        <li>Organic traffic to educational content</li>
+                        <li>Question-based query performance</li>
+                        <li>Manual AI system testing (quarterly)</li>
+                        <li>Support ticket reduction</li>
+                        <li>Engagement metrics (time, scroll, clicks)</li>
+                    </ul>
+                    <p><strong>Key Takeaway:</strong> Direct AI analytics are limited, but patterns reveal performance</p>
+                </div>
+
+                <div class="example">
+                    <h4>5. Iterate Continuously 🔄</h4>
+                    <ul>
+                        <li>Treat AI systems as feedback channels</li>
+                        <li>Test content in AI platforms quarterly</li>
+                        <li>Update based on user confusion points</li>
+                        <li>Refine based on performance data</li>
+                        <li>Apply learnings to new content</li>
+                    </ul>
+                    <p><strong>Key Takeaway:</strong> AI optimization is ongoing, not one-and-done</p>
+                </div>
+
+                <div class="workflow">
+                    <strong>Success Formula:</strong><br><br>
+                    Clear Content + Strong Structure + Technical Best Practices + Regular Testing = AI Visibility
+                </div>
+
+                <h3>Getting Started: First 30 Days</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timeline</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Week 1: Foundation</strong></td>
+                            <td>
+                                ☐ Audit top 10 most-visited content pages<br>
+                                ☐ Create master list of target queries<br>
+                                ☐ Set up AI visibility testing dashboard
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Week 2: Quick Wins</strong></td>
+                            <td>
+                                ☐ Add FAQ sections to top 5 pages<br>
+                                ☐ Implement schema markup on key pages<br>
+                                ☐ Update outdated information
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Week 3: Content Creation</strong></td>
+                            <td>
+                                ☐ Create 2-3 new comprehensive guides<br>
+                                ☐ Follow the implementation checklist<br>
+                                ☐ Set up tracking for new content
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Week 4: Testing</strong></td>
+                            <td>
+                                ☐ Test all key queries in ChatGPT, Gemini, Perplexity<br>
+                                ☐ Document current AI visibility<br>
+                                ☐ Identify biggest gaps
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Month 2+: Scale</strong></td>
+                            <td>
+                                ☐ Continue monthly content creation<br>
+                                ☐ Quarterly AI testing and refinement<br>
+                                ☐ Build on successful patterns
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note">
+                    <p><strong>Remember:</strong> The goal isn't to game AI systems—it's to become the clearest, most helpful source of eyewear information online. If we do that well, AI visibility will follow.</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p><strong>Document Version:</strong> 1.0</p>
+            <p><strong>Last Updated:</strong> 2026</p>
+            <p><strong>Next Review:</strong> Quarterly</p>
+            <p style="margin-top: 1.5rem; opacity: 0.8;">This playbook is a living document. As AI systems evolve, so will our strategies.</p>
+        </footer>
+    </div>
+</body>
+</html>
