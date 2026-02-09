@@ -40,7 +40,17 @@ This documentation is designed as an internal playbook for how Zenni should crea
    - 5.3. Topics to Prioritize
    - 5.4. Lower-Priority Content
 6. [Implementation Checklist](#6-concrete-implementation-checklist)
-7. [Key Takeaways](#summary-of-key-points)
+7. [Cross-Functional Activation: Social Media & Lifecycle](#7-cross-functional-activation-social-media--lifecycle)
+   - 7.1. Shared Strategy for Social + Lifecycle
+   - 7.2. Collaborative Initiatives
+   - 7.3. Social Media Team Tactics
+   - 7.4. Lifecycle Team Tactics
+8. [Cross-Functional Activation: Affiliate Marketing & PR](#8-cross-functional-activation-affiliate-marketing--pr)
+   - 8.1. Shared GEO Objectives for Affiliate & PR
+   - 8.2. Affiliate Marketing Tactics
+   - 8.3. PR Tactics
+   - 8.4. Coordination Between Teams
+9. [Key Takeaways](#summary-of-key-points)
 
 ---
 
@@ -429,7 +439,7 @@ Monitor for:
 
 **2. On-Site Chatbot/Virtual Assistant Analytics**
 
-If Zenni has a chatbot, track:
+Track your chatbot performance to identify content opportunities:
 
 | Metric | What It Tells You |
 |--------|-------------------|
@@ -1362,6 +1372,730 @@ Print this and keep it handy:
 - [ ] Added to tracking dashboard ✓
 - [ ] AI testing scheduled ✓
 - [ ] Team notified ✓
+
+---
+
+## 7. Cross-Functional Activation: Social Media & Lifecycle
+
+### Overview
+
+The social media and lifecycle (CRM/email) teams play a critical role in GEO by:
+
+- Amplifying **AI-ready content** that generative systems are most likely to reference.
+- Driving **consistent, factual narratives** about Zenni across the open web.
+- Using **audience data and campaign performance** to guide new content creation and optimization.
+- Collaborating with SEO/content and PR to grow Zenni's authority footprint in sources that AI systems trust.
+
+This section defines specific, coordinated strategies for both teams to enhance Zenni Optical's visibility and prominence in ChatGPT, AI Overviews, and AI Mode.
+
+---
+
+### 7.1. Shared Strategy for Social + Lifecycle
+
+#### Joint Objectives for AI Visibility
+
+Social and lifecycle teams should align on three core GEO outcomes:
+
+1. **Brand Visibility in AI Answers**  
+   Ensure Zenni is mentioned when users ask AI assistants questions such as:
+   - "best affordable prescription glasses online"
+   - "are Zenni glasses good quality?"
+   - "how to measure PD at home"
+   - "Zenni vs Warby Parker"
+   - "blue light glasses that actually work"
+
+2. **Message Accuracy and Consistency**  
+   AI systems should repeat the same core facts everywhere:
+   - Typical **price range** and value proposition.
+   - **Quality story** (materials, inspections, certifications).
+   - **Shipping timeframes** and **return/remake policy**.
+   - Key **differentiators** (selection, kids' focus, blue light offering, etc.).
+
+3. **Authority Through Engagement and Citations**  
+   Direct more engaged traffic and external mentions to:
+   - Canonical guides and FAQs.
+   - Help center and policy pages.
+   - Authoritative brand/overview pages.  
+   These are the pages AI models are most likely to treat as primary sources.
+
+---
+
+#### Shared Operating System
+
+To coordinate effectively, social and lifecycle teams should adopt a common operating model:
+
+**Quarterly "AI Visibility Review" Meeting**
+
+- **Participants:** Social, lifecycle, SEO/content, CX/support, and PR (when relevant).
+- **Agenda:**
+  - Review how Zenni appears for a standard set of queries in ChatGPT, Google AI Overviews/AI Mode, and other major assistants.
+  - Identify incorrect, outdated, or missing information.
+  - Prioritize topics for upcoming content, social campaigns, and email flows.
+
+**Central "Zenni Facts & Messaging" Sheet**
+
+- A single source of truth containing:
+  - Latest shipping and return/remake policies.
+  - Lens/lens-coating options and pricing ranges.
+  - Differentiators and proof points (ratings, number of glasses sold, etc.).
+- All social posts, email campaigns, and flows about core topics reference this document to maintain consistency.
+
+**Shared "Question Bank"**
+
+- A living document of real user questions sourced from:
+  - Support tickets.
+  - Search Console queries.
+  - Social comments/DMs.
+  - Reddit, Quora, and other community platforms.
+- Each question tagged with:
+  - **Intent:** informational, transactional, comparative, support.
+  - **Priority:** critical, high, medium, low.
+- This bank directly informs social content calendars and lifecycle flow design.
+
+---
+
+### 7.2. Collaborative Initiatives (Social × Lifecycle)
+
+#### "AI-Ready Canonical Content" Campaigns
+
+**Goal:** Focus promotion and engagement around a small number of definitive, AI-optimized pages that generative systems are most likely to quote.
+
+**Steps:**
+
+**1. Select 4–6 Canonical Topics Per Quarter**
+
+Examples:
+- "How to measure your PD at home."
+- "Are blue light glasses effective and who should wear them?"
+- "Affordable progressive lenses online."
+- "How to choose durable kids' glasses."
+- "Zenni's 30-day return and remake policy explained."
+
+**2. Ensure Each Topic Has a Strong Canonical Page**
+
+- Comprehensive guides or FAQs following the structures defined in the main GEO playbook.
+- Clear Q&A sections mirroring real questions.
+- Internal links to relevant product/category pages.
+
+**3. Social Team Responsibilities**
+
+- Develop multi-post series around each topic:
+  - Short-form videos (Reels, TikTok, Shorts) explaining concepts simply.
+  - Carousel posts with step-by-step visuals (e.g., PD measurement).
+  - Threads or long-form captions that mirror question/answer structure.
+- Include the full question as the hook or first frame when possible.
+- Link back to the canonical guide in post captions, bios, and link hubs.
+
+**4. Lifecycle Team Responsibilities**
+
+- Build or update short educational email series for each canonical topic:
+  - **Email 1:** Direct answer and basic education ("What is it?").
+  - **Email 2:** Application and examples ("Is this right for you?").
+  - **Email 3:** Product tie-in and next steps (frames/lenses to consider).
+- Use consistent wording for questions across subject lines, headlines, and CTAs.
+- Point all relevant flows to the same canonical pages used by social.
+
+**Impact on AI:**
+
+By pushing sustained traffic, engagement, and external references to a small number of deeply authoritative pages, Zenni increases the likelihood that those pages are used as primary references by generative AI systems.
+
+---
+
+#### Question-Led Content Programming
+
+**Goal:** Align public content and lifecycle messaging around the exact questions that real users (and thus AI users) ask.
+
+**Actions:**
+
+**1. Operationalize the Question Bank**
+
+- Social and lifecycle teams pull weekly or bi-weekly from the shared question list.
+- Each question is mapped to:
+  - One or more social posts.
+  - At least one FAQ or guide section.
+  - Optional lifecycle touchpoint (onboarding, browse/bounce trigger, post-purchase education).
+
+**2. Social Team Execution**
+
+- Weekly "Zenni Answers" or "Ask an Optician" series:
+  - Post title or first frame uses the verbatim question.
+  - First line of copy provides a concise answer.
+  - Subsequent slides or video sections provide additional depth, visuals, or examples.
+- Encourage questions in comments and DMs; add new high-volume questions back into the Question Bank.
+
+**3. Lifecycle Team Execution**
+
+- Use Q&A framing in:
+  - Welcome/onboarding flows.
+  - Education series for progressives, kids' eyewear, blue light, etc.
+  - Transactional sequences (e.g., after first purchase: "How do I adjust my glasses at home?").
+- Maintain a consistent pattern:
+  - Subject line: the question.
+  - First line: direct answer.
+  - Body: expanded explanation + links to canonical guides/FAQs.
+
+**Impact on AI:**
+
+Generative systems are heavily trained on Q&A formats. When Zenni content mirrors those question structures consistently and appears in multiple high-authority places (site, email-linked content, off-site mentions), AI systems are more likely to adopt Zenni's framing and language.
+
+---
+
+#### Creator and Partner Content Optimized for AI
+
+**Goal:** Generate high-quality, third-party content that mentions and links to Zenni in ways AI models are likely to see and trust.
+
+**Partner Types:**
+
+- Optometrists and eye health professionals.
+- Tech/gaming creators (blue light and gaming glasses).
+- Parenting and education influencers (kids' glasses).
+- Frugal/budget and lifestyle creators (affordable eyewear).
+
+**Guidelines:**
+
+**Brief Design:**
+
+- Encourage long-form, evergreen formats:
+  - Blog posts or newsletter features.
+  - YouTube videos with detailed descriptions.
+  - Long captions or threads that can be scraped as rich text.
+- Require:
+  - Clear, factual statements about Zenni (price ranges, materials, policies).
+  - Links to the canonical Zenni guides and FAQs mentioned above.
+- Recommend question-based titles:
+  - "Is Zenni Optical legit?"
+  - "Best cheap prescription glasses online: my experience."
+  - "How to buy glasses online safely (feat. Zenni)."
+
+**Social Team Role:**
+
+- Identify and manage influencer/partner relationships.
+- Cross-promote partner content across Zenni's channels.
+- Use partner assets in "stitch" or "duet" formats to answer questions and drive viewers to canonical content.
+
+**Lifecycle Team Role:**
+
+- Feature select partner content in newsletters and flows:
+  - "Optometrist explains progressive lenses (and why she recommends Zenni)."
+  - "Budget expert compares Zenni vs traditional eyewear pricing."
+- Track engagement to see which narratives and creators drive the most interactions and conversions.
+
+**Impact on AI:**
+
+Generative systems tend to favor brands that are mentioned in multiple credible, third-party contexts. Partner content seeded across the web (blogs, YouTube, newsletters) provides diverse, authoritative signals that Zenni is a relevant and trusted brand for key eyewear topics.
+
+---
+
+#### AI Visibility Testing and Content Sprints
+
+**Goal:** Use AI assistants themselves as feedback loops to guide social and lifecycle content priorities.
+
+**Process:**
+
+**1. Standard Query Set**
+
+- Maintain a living list of queries to test, grouped by:
+  - Product (e.g., "affordable progressive lenses online").
+  - Information (e.g., "how to measure PD at home").
+  - Comparison (e.g., "Zenni vs Warby Parker").
+  - Policy (e.g., "Zenni return policy").
+
+**2. Quarterly AI Audit**
+
+- For each query, check:
+  - Is Zenni mentioned?
+  - Are key facts accurate?
+  - How prominently is Zenni featured vs competitors?
+- Log outcomes in a simple scorecard (e.g., mention rate, accuracy, prominence, detail).
+
+**3. Content Sprints from Gaps**
+
+- If Zenni is **missing** or underrepresented on a query:
+  - Strengthen or create a canonical page targeting that query.
+  - Plan a 2–4 week social and email push focused on that topic, driving users (and algorithms) to the improved content.
+- If information is **inaccurate**:
+  - Correct the origin pages (policy pages, FAQs, help center).
+  - Run "myth-busting" campaigns on social and in email to clearly restate correct facts.
+
+**4. Re-Testing**
+
+- Re-run key queries 4–8 weeks after changes.
+- Compare scores and adjust upcoming content calendars accordingly.
+
+---
+
+### 7.3. Social Media Team: Focused Tactics
+
+#### Content Development
+
+**AI-Friendly Educational Series**
+
+- Weekly or bi-weekly series tailored to core eyewear questions.
+- Consistent template:
+  - Question as hook.
+  - Clear, direct answer.
+  - Deeper context, visuals, and examples.
+
+**Evergreen Explainer Threads and Carousels**
+
+- Topics aligned with main GEO pillars:
+  - Blue light glasses.
+  - Progressive lenses.
+  - Face shape and frame selection.
+  - Kids' frames and durability.
+- Always drive to the most relevant canonical guide or FAQ.
+
+**"From AI to Reality" Formats**
+
+- Take common AI answers or misconceptions (e.g., "Is it safe to buy glasses online?").
+- Use social posts to:
+  - Clarify nuances.
+  - Add real customer experiences.
+  - Point back to authoritative Zenni resources.
+
+---
+
+#### Audience Targeting and Community Development
+
+**Engage in Answer-Seeking Communities**
+
+- Where allowed, participate in:
+  - Subreddits (glasses, frugal living, parenting, gaming).
+  - Q&A platforms like Quora.
+  - Niche Facebook groups and forums.
+- Provide neutral, helpful answers to questions about PD, lens types, online eyewear safety, and kids' glasses, occasionally citing Zenni as one option with pros/cons.
+
+**Live Q&A Sessions and AMAs**
+
+- Recurring IG Live / TikTok Live / YouTube Live "Ask an Optician / Stylist" sessions.
+- Capture and repurpose:
+  - Transcripts into blogs/FAQs.
+  - Clips into short-form content.
+  - Top new questions into the Question Bank.
+
+---
+
+#### Analytics and Optimization
+
+**Track Performance of Question-Based Content**
+
+- Use naming conventions or tags to identify Q&A posts.
+- Monitor:
+  - Saves, shares, comments, and click-throughs.
+  - Recurring questions in comments (feed back into content and FAQ creation).
+
+**Signal Amplification**
+
+- When a topic performs strongly on social (e.g., PD measurement tutorials):
+  - Alert SEO/content and lifecycle.
+  - Ensure the related guide is up-to-date and comprehensive.
+  - Add that topic more prominently into email education flows and onsite navigation.
+
+---
+
+### 7.4. Lifecycle Team: Focused Tactics
+
+#### Content and Journey Design
+
+**AI-Aligned Welcome and Education Flows**
+
+- Build multi-step sequences that mirror common AI queries:
+  - "How to read your prescription."
+  - "How to measure your PD."
+  - "Are progressive lenses right for you?"
+  - "Are blue light glasses worth it?"
+- Structure:
+  - Subject line: question.
+  - Lead: succinct, clear answer.
+  - Body: deeper explanation + visuals + link to canonical page.
+
+**Behavior-Based Educational Triggers**
+
+- Example triggers and responses:
+  - Browsed progressives but did not purchase → send "Single vision vs progressive vs bifocal: which is right for you?"
+  - Browsed kids' frames → send "How to choose durable kids' glasses (and how to know if they fit)."
+  - Opened multiple blue light–related emails → send "Do you actually need blue light glasses?" with clear, balanced information.
+
+---
+
+#### Audience Segmentation and Targeting
+
+**Segment by Knowledge Level and Use Case**
+
+- New to glasses vs experienced wearers.
+- Parents buying for children vs adults buying for themselves.
+- Primarily budget-focused vs primarily style-focused vs primarily eye-strain/health-focused.
+
+**Tailor Questions, Keep Facts Consistent**
+
+- Adjust angles and examples, but maintain:
+  - The same factual statements about prices, policies, and lens options.
+  - The same canonical URLs for deeper reading.
+
+---
+
+#### Data and Performance Evaluation
+
+**Lifecycle Metrics Aligned with GEO Goals**
+
+- Track:
+  - Click-through to canonical guides and FAQs.
+  - Time on page and scroll depth from email traffic.
+  - Conversion rate from those pages.
+- Share findings with social and SEO/content:
+  - Identify which questions and narratives drive the strongest engagement and conversions.
+
+**Closing the Loop with AI Audits**
+
+- Use insights from email performance to:
+  - Prioritize which topics to test in AI assistants.
+  - Inform where deeper content or clearer explanations are needed.
+
+---
+
+## 8. Cross-Functional Activation: Affiliate Marketing & PR
+
+### Overview
+
+Affiliate Marketing and PR are critical levers for improving Zenni Optical's visibility in generative AI systems. While social and lifecycle amplify Zenni's own channels, affiliates and PR:
+
+- Create **high-authority third-party content** that AI models crawl and trust.
+- Generate **independent mentions, comparisons, and reviews** of Zenni across the web.
+- Strengthen Zenni's **topical authority** through backlinks, citations, and expert coverage.
+- Provide **stories, data, and narratives** that AI systems can reference when answering user questions.
+
+This section outlines how Affiliate and PR teams can systematically support GEO and work in tandem with SEO, Social, Lifecycle, and Evertune AI insights.
+
+---
+
+### 8.1. Shared GEO Objectives for Affiliate & PR
+
+Affiliate and PR programs should align around three GEO-centric objectives:
+
+**1. Increase High-Quality Off-Site Mentions**
+
+- Secure more appearances of "Zenni Optical" in:
+  - Reviews and comparison articles.
+  - Long-form guides and "best of" lists.
+  - Expert interviews, podcasts, and videos.
+- Ensure those mentions include **clear, factual descriptions** of Zenni's value proposition.
+
+**2. Strengthen Authoritative Backlinks to Canonical Content**
+
+- Encourage partners and press to link to:
+  - Canonical guides (PD measurement, lens types, blue light, etc.).
+  - Core policy pages (shipping, returns, warranty).
+  - Brand overview and "About Zenni" pages.
+- These links help search engines and AI systems recognize Zenni's content as **authoritative sources** on key eyewear topics.
+
+**3. Shape Narrative and Comparisons in Third-Party Content**
+
+- Aim for fair and accurate representation in:
+  - "Zenni vs. [competitor]" articles.
+  - "Best cheap/affordable prescription glasses" roundups.
+  - "Is Zenni legit / worth it?" deep dives.
+- Provide **clear, quotable positioning statements** and compelling proof points that journalists and affiliates can easily reuse.
+
+---
+
+### 8.2. Affiliate Marketing: Tactics to Support AI Visibility
+
+#### Affiliate Recruitment and Prioritization
+
+**Goal:** Build a network of affiliates whose content is likely to be crawled by AI systems and treated as high-quality reference material.
+
+**Priorities:**
+
+**Content-Rich Publishers**
+
+- Sites that produce:
+  - Long-form guides.
+  - Product reviews and comparisons.
+  - How-to articles (e.g., "how to buy glasses online").
+- Categories:
+  - Tech and gadgets.
+  - Personal finance and frugal living.
+  - Health and wellness.
+  - Parenting and education.
+  - Gaming and screen-heavy lifestyles.
+
+**Influencers with Owned Platforms**
+
+- Creators who maintain:
+  - Blogs or newsletters (not just social-only presence).
+  - YouTube channels with robust descriptions and companion articles.
+
+**Niche Expert Sites**
+
+- Optometry/eye health blogs.
+- Occupational safety and sports gear sites (for safety/sports glasses).
+- Accessibility and disability-focused communities (for specialized use cases).
+
+---
+
+#### GEO-Friendly Affiliate Guidelines and Toolkits
+
+**Goal:** Ensure affiliate content reinforces the same clear, AI-ready narratives that exist on Zenni's owned channels.
+
+**Create an Affiliate GEO Toolkit Including:**
+
+**1. Messaging Guide**
+
+- Key talking points:
+  - "Affordable prescription glasses starting at [current entry price]."
+  - "Wide selection of frames for adults and kids."
+  - "Options for blue light, progressives, high-index, and prescription sunglasses."
+  - "30-day return/remake policy and quality standards."
+- Factual bullet points for quick copy/paste (kept in sync with the Zenni Facts & Messaging sheet).
+
+**2. Content Brief Templates**
+
+- Structured outlines for popular affiliate content types:
+  - "Is Zenni Optical Legit? Full Review"
+    - Overview, pros/cons, ordering experience, quality, price comparison, who it's best for.
+  - "Best Cheap Prescription Glasses Online (Zenni vs Competitors)"
+    - Comparison table, scenarios, recommendations.
+  - "How to Buy Glasses Online with Zenni"
+    - Step-by-step guide, tips, FAQs.
+- Encouraged SEO/AI-friendly practices:
+  - Use full question-style H2/H3 headings.
+  - Include explicit Q&A and FAQ sections.
+  - Link to Zenni's canonical guides where appropriate.
+
+**3. Fact Sheets and Data Points**
+
+- Up-to-date stats:
+  - Number of glasses sold.
+  - Years in operation.
+  - Average price ranges.
+  - Popular categories and best-sellers.
+- These provide quotable material that AI systems will often reuse.
+
+---
+
+#### Aligning Affiliate Content with Canonical Zenni Resources
+
+**Goal:** Make it easy for AI models to connect affiliate content back to Zenni's authoritative pages.
+
+**Best Practices to Encourage in Affiliate Communication:**
+
+**Deep Linking Recommendations**
+
+- When affiliates explain:
+  - PD measurement → link to Zenni's PD guide.
+  - Lens types → link to Zenni's lens guide.
+  - Blue light → link to Zenni's blue light guide.
+- Provide UTM-tagged links that are also **SEO-friendly canonical URLs.**
+
+**Consistent Question Phrasing**
+
+- Ask affiliates to reuse key questions:
+  - "Is Zenni Optical legit?"
+  - "Are Zenni glasses good quality?"
+  - "How long does Zenni take to ship?"
+- This consistency helps AI systems recognize recurring question-answer patterns across sites.
+
+**Balanced Comparisons**
+
+- Encourage honest, balanced pros/cons presentations:
+  - Highlight Zenni's strengths clearly and accurately.
+  - Address common concerns (e.g., fit, returns, prescription accuracy).
+- AI models trained on such content will more likely present Zenni as a **trusted option** with clear strengths.
+
+---
+
+#### Measurement and Optimization with Evertune AI and Affiliate Data
+
+**Goal:** Use data to refine affiliate strategy for maximum AI impact.
+
+**Actions:**
+
+**Integrate Affiliate & Evertune AI Insights**
+
+- When Evertune AI shows:
+  - Strong Zenni visibility for specific queries → identify which affiliate articles rank/are referenced and replicate their patterns with other partners.
+  - Weak or inaccurate representation → pinpoint gaps in external content and prioritize new or updated affiliate articles.
+
+**Performance Feedback Loops**
+
+- Track:
+  - Which affiliates send traffic to canonical guides and FAQs.
+  - Which affiliate pages are earning backlinks and social shares.
+- Share with affiliates:
+  - Topics and formats that correlate with improved AI visibility (from Evertune AI trends).
+  - Suggestions for future content that targets under-served queries.
+
+---
+
+### 8.3. PR: Tactics to Support AI Visibility
+
+#### Story Development Aligned with GEO Goals
+
+**Goal:** Craft PR narratives that reinforce Zenni's core positioning and answer high-value questions.
+
+**Priority Story Angles:**
+
+**Access and Affordability**
+
+- "How online eyewear expanded access to affordable vision correction."
+- "Why prescription glasses don't have to cost hundreds of dollars."
+
+**Education and Eye Health**
+
+- "What consumers get wrong about blue light and eye strain."
+- "How to know when it's time to update your prescription."
+
+**Innovation and Experience**
+
+- "How Zenni uses technology to simplify buying glasses online."
+- "Behind the scenes: virtual try-on, PD measurement tools, and advanced lenses."
+
+Each PR narrative should:
+
+- Include **clear, quotable explanations** of key concepts (PD, lens types, blue light, etc.).
+- Reference Zenni's **canonical resources** for readers to learn more.
+- Reinforce consistent, factual claims that align with the central messaging sheet.
+
+---
+
+#### Targeting Publications and Formats AI Tends to Trust
+
+**Goal:** Place Zenni in outlets and formats that have strong authority signals and are frequently used as training sources.
+
+**Priority Targets:**
+
+**High-Authority Media**
+
+- Tech and consumer electronics sites.
+- Health and wellness publications.
+- Major newspapers and magazines with commerce/review sections.
+
+**Service Journalism and Explainers**
+
+- "How to buy glasses online."
+- "Best places to buy cheap prescription glasses."
+- "What to look for in progressive lenses."
+
+**Data-Backed Features**
+
+- PR-led research reports (e.g., "State of Digital Eye Strain," "Cost of Vision Care") placed in recognized outlets.
+- Articles that combine **Zenni data + expert quotes + consumer insights.**
+
+These formats generate **structured, explanatory content** that is attractive training material for AI systems and likely to influence how they answer related questions.
+
+---
+
+#### Press Kits and Expert Access
+
+**Goal:** Make it easy for journalists and creators to cover Zenni accurately and in depth.
+
+**Press Kit Components:**
+
+**Company Overview One-Pager**
+
+- Clear description of Zenni's origin, mission, and differentiators.
+- Factual bullet points suitable for copy/paste.
+
+**Top FAQs for Press**
+
+- "What does Zenni cost compared to traditional retailers?"
+- "How does Zenni ensure lens accuracy and quality?"
+- "What is the return and remake policy?"
+- Each with short, precise answers that match site content.
+
+**Expert Quotes and Bios**
+
+- On-staff optometrists, product experts, or executives who can speak to:
+  - Eye health and lens technology.
+  - Online eyewear safety and quality.
+  - Trends in digital eye strain and screen use.
+
+**Data and Visuals**
+
+- Charts, infographics, and stats that support stories about:
+  - Pricing comparisons.
+  - Adoption of online eyewear.
+  - The impact of screen time on eye health.
+
+---
+
+#### Measuring PR Impact on AI Visibility
+
+**Goal:** Tie PR work to measurable changes in AI behavior.
+
+**Actions:**
+
+**Use Evertune AI to Track Narrative Shifts**
+
+- After major PR campaigns or key placements:
+  - Check whether AI assistants start:
+    - Mentioning Zenni more often in relevant queries.
+    - Using PR language or data points in their summaries.
+    - Comparing Zenni more favorably to competitors.
+  - Capture before/after snapshots for:
+    - Brand mention rate.
+    - Accuracy and depth of information.
+    - Sentiment and narrative framing.
+
+**Feedback into PR Strategy**
+
+- Identify which:
+  - Outlets.
+  - Story angles.
+  - Data points and quotes  
+  result in the biggest positive shifts in AI visibility.
+- Prioritize similar stories and outlets in future PR planning.
+
+---
+
+### 8.4. Coordination Between Affiliate, PR, and Other Teams
+
+#### Shared Planning with SEO, Social, and Lifecycle
+
+**Quarterly Planning**
+
+- Affiliate, PR, SEO/content, Social, Lifecycle, and CX/support align on:
+  - Priority topics for the next 3–6 months.
+  - Canonical pages that need more external support.
+  - Queries where AI visibility is weak (from Evertune AI reports).
+
+**Content and Story Synchronization**
+
+- Ensure that:
+  - Affiliate briefs are aligned with PR narratives.
+  - Social campaigns amplify key press hits and high-value affiliate content.
+  - Lifecycle emails highlight and link to major third-party coverage ("See what [Outlet] said about Zenni").
+
+#### Shared Dashboards and Reporting
+
+**Affiliate & PR GEO Dashboard**
+
+- Combine:
+  - Affiliate performance (traffic to canonical pages, backlinks, content types).
+  - PR wins (placements, link quality, quoting of Zenni).
+  - Evertune AI visibility metrics (mention rate, accuracy, prominence by topic).
+- Review quarterly to:
+  - Identify the highest-ROI partner types and outlets.
+  - Refine recruitment and pitching strategies.
+  - Decide which content patterns to scale.
+
+---
+
+### Summary: How Affiliate & PR Support GEO
+
+**Affiliate Marketing:**
+
+- Scales **third-party educational content** and **comparisons** that AI systems learn from.
+- Directs readers and algorithms back to Zenni's canonical resources via deep links.
+- Provides a large volume of consistent, factual mentions across diverse sites.
+
+**PR:**
+
+- Secures **high-authority coverage** and **data-rich stories** that influence AI's understanding of the eyewear category.
+- Shapes the **narrative** around affordability, quality, and safety of online glasses.
+- Supplies quotable facts and expert commentary that appear in AI-generated summaries.
+
+Together, Affiliate Marketing and PR extend Zenni's GEO strategy far beyond owned channels, creating a robust ecosystem of authoritative references that help generative AI systems recognize Zenni as a leading, trustworthy source for online eyewear.
 
 ---
 
