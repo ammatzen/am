@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyword Gap Analysis & Content Strategy — Zenni Optical</title>
+  <style>
+    :root {
+      --zenni-primary: #084045;
+      --zenni-complement: #B5Dee8;
+      --zenni-primary-light: rgba(8, 64, 69, 0.08);
+      --zenni-complement-dark: #8fc9d4;
+      --text: #1a1a1a;
+      --text-muted: #444;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      background: #fff;
+    }
+    .report-header {
+      border-bottom: 4px solid var(--zenni-primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .report-header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--zenni-primary);
+    }
+    .report-header .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+    nav.toc {
+      background: var(--zenni-primary-light);
+      border-left: 4px solid var(--zenni-primary);
+      padding: 1rem 1.25rem;
+      margin: 2rem 0;
+    }
+    nav.toc h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--zenni-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    nav.toc ul {
+      margin: 0;
+      padding-left: 1.25rem;
+      list-style: none;
+    }
+    nav.toc li { margin: 0.35rem 0; }
+    nav.toc li::before { content: "§ "; color: var(--zenni-primary); font-weight: 600; }
+    nav.toc a {
+      color: var(--zenni-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav.toc a:hover { text-decoration: underline; }
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--zenni-primary);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.35rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--zenni-primary);
+      margin: 1.5rem 0 0.5rem;
+    }
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin: 1.25rem 0 0.4rem;
+    }
+    p { margin: 0.75rem 0; }
+    strong { color: var(--zenni-primary); font-weight: 600; }
+    .callout {
+      background: var(--zenni-complement);
+      color: var(--zenni-primary);
+      padding: 1rem 1.25rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      font-weight: 500;
+    }
+    .opportunity {
+      background: var(--zenni-primary);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      margin: 1rem 0;
+      font-weight: 600;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+    th {
+      background: var(--zenni-primary);
+      color: #fff;
+      text-align: left;
+      padding: 0.6rem 0.75rem;
+      font-weight: 600;
+    }
+    td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    tr:nth-child(even) { background: var(--zenni-primary-light); }
+    tr:hover { background: rgba(181, 222, 232, 0.25); }
+    .priority-a { background: rgba(181, 222, 232, 0.5); font-weight: 600; }
+    .priority-b { }
+    .priority-c { color: var(--text-muted); }
+    ul { margin: 0.5rem 0; padding-left: 1.5rem; }
+    li { margin: 0.35rem 0; }
+    .recommendation {
+      background: #f8fafa;
+      border-left: 3px solid var(--zenni-complement);
+      padding: 0.75rem 1rem;
+      margin: 0.75rem 0;
+    }
+    .recommendation .action { font-weight: 500; }
+    .recommendation .why { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem; }
+    .checklist { list-style: none; padding-left: 0; }
+    .checklist li {
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--zenni-primary);
+    }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    @media print {
+      body { padding: 1rem; }
+      nav.toc { break-inside: avoid; }
+      table { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="report-header">
+    <h1>Keyword Gap Analysis & Content Strategy</h1>
+    <p class="subtitle">Zenni Optical — Consolidated Report</p>
+  </header>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#executive-summary">1. Executive Summary</a></li>
+      <li><a href="#keyword-gap-table">2. Standardized Keyword Gap Table (Top 10)</a></li>
+      <li><a href="#findings">3. Unified Findings & Patterns</a></li>
+      <li><a href="#recommendations">4. Prioritized Recommendations</a></li>
+      <li><a href="#timeline">5. 30/60/90 Day Implementation Timeline</a></li>
+      <li><a href="#content-briefs">6. Content Briefs Overview</a></li>
+      <li><a href="#metrics">7. Measurement & Success Metrics</a></li>
+      <li><a href="#checklist">8. Implementation Checklist & Handoff</a></li>
+      <li><a href="#appendix">9. Appendix — Existing vs. Missing Assets</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="executive-summary">
+      <h2>1. Executive Summary</h2>
+      <p>Zenni already owns important product inventory and several root pages (notably Blokz blue-light content and numerous <code>/b/</code> product-listing pages). That gives us <strong>immediate, low-effort SEO upside</strong> by converting existing pages into hybrid hubs (concise editorial + shoppable grid + FAQ/schema).</p>
+      <div class="callout">
+        <strong>90-day focus:</strong> Prioritize three <strong>quick wins</strong> (blue-light hub upgrade, aviator style guide, kids polarized hub) and deliver <strong>4–6 medium/strategic builds</strong> (face-shape landing pages, rimless guide, reading strength chart, face-shape quiz, oversized lookbook).
+      </div>
+      <div class="opportunity">
+        Opportunity: Executing the prioritized plan aims to capture a large portion of the estimated <strong>100,000+ monthly non-branded searches</strong> currently dominated by Warby Parker and Zeelool.
+      </div>
+    </section>
+
+    <section id="keyword-gap-table">
+      <h2>2. Standardized Keyword Gap Table (Top 10)</h2>
+      <h3>Status definitions</h3>
+      <table>
+        <thead>
+          <tr><th>Status</th><th>Meaning</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Exists</strong></td><td>A root editorial/hub page or dedicated brand page exists.</td></tr>
+          <tr><td><strong>Partial</strong></td><td>Product inventory or listing exists (often under <code>/b/</code>) but no dedicated hub or optimized content.</td></tr>
+          <tr><td><strong>Missing</strong></td><td>No dedicated page or content asset.</td></tr>
+        </tbody>
+      </table>
+      <h3>Top 10 keyword gaps</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Vol./mo</th>
+            <th>Zenni</th>
+            <th>Competitor</th>
+            <th>Recommended Action</th>
+            <th>Prio.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="priority-a"><td>blue light glasses</td><td>60,000</td><td>Exists</td><td>Warby Parker</td><td>Upgrade to hybrid hub (FAQ schema + shoppable grid)</td><td><strong>A</strong></td></tr>
+          <tr class="priority-a"><td>aviator sunglasses women</td><td>12,000</td><td>Partial</td><td>Warby Parker</td><td>Build style guide (lookbook + AR CTA)</td><td><strong>A</strong></td></tr>
+          <tr class="priority-b"><td>sunglasses for round face</td><td>5,400</td><td>Partial</td><td>Warby Parker</td><td>Build dedicated landing (curated picks + schema)</td><td><strong>B</strong></td></tr>
+          <tr class="priority-c"><td>glasses frames for square face</td><td>4,800</td><td>Missing</td><td>Zeelool</td><td>Build face-shape quiz + landing</td><td><strong>C</strong></td></tr>
+          <tr class="priority-b"><td>rimless prescription glasses</td><td>3,200</td><td>Partial</td><td>Warby Parker</td><td>Build product guide + schema</td><td><strong>B</strong></td></tr>
+          <tr class="priority-a"><td>kids polarized sunglasses</td><td>2,900</td><td>Exists</td><td>Warby Parker</td><td>Add kids safety hub + schema</td><td><strong>A</strong></td></tr>
+          <tr class="priority-b"><td>glasses for astigmatism</td><td>2,500</td><td>Missing</td><td>Warby Parker</td><td>Build educational article + Rx CTAs</td><td><strong>B</strong></td></tr>
+          <tr class="priority-c"><td>mens prescription sunglasses</td><td>2,100</td><td>Partial</td><td>Zeelool</td><td>Build men's hub (shapes + Rx)</td><td><strong>C</strong></td></tr>
+          <tr class="priority-c"><td>oversized glasses frames</td><td>1,800</td><td>Partial</td><td>Zeelool</td><td>Build lookbook + shoppable tiles</td><td><strong>C</strong></td></tr>
+          <tr class="priority-b"><td>reading glasses strength chart</td><td>1,600</td><td>Missing</td><td>Warby Parker</td><td>Build downloadable strength chart & PD video</td><td><strong>B</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>Total opportunity (estimated):</strong> <strong>&gt;100,000</strong> monthly searches across these terms.</p>
+    </section>
+
+    <section id="findings">
+      <h2>3. Unified Findings & Patterns</h2>
+      <h3>Market structure</h3>
+      <p>Incumbents (Warby Parker, LensCrafters) capture heavy volume with <strong>hybrid category hubs + robust schema</strong>; challengers (Zeelool) grow quickly through targeted category pages and fit/style tools. Zenni's advantage is <strong>inventory and <code>/b/</code> product listings</strong> — the gap is <strong>editorial and utility content</strong> that connects search intent to product pages.</p>
+      <h3>Top tactical weaknesses</h3>
+      <ul>
+        <li>Lack of hybrid landing pages for several high-volume queries (blue-light hubs are partial; face-shape pages partial or missing).</li>
+        <li>Competitors use <strong>FAQ schema</strong>, <strong>product/offer schema</strong>, and <strong>interactive tools</strong> (try-on, quizzes), which boost CTR and conversion.</li>
+      </ul>
+      <h3>Conversion opportunity</h3>
+      <p><strong>Upgrade existing pages first</strong> (low dev cost), then build new assets (higher dev cost). Shoppable editorial hubs (short editorial + product grid + FAQ schema) consistently outperform plain product listings for competitive keywords.</p>
+    </section>
+
+    <section id="recommendations">
+      <h2>4. Prioritized Recommendations</h2>
+      <p><strong>Priority logic (Impact × Effort)</strong></p>
+      <table>
+        <thead><tr><th>Priority</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A</strong></td><td>Quick wins — low dev, high impact</td></tr>
+          <tr><td><strong>B</strong></td><td>Medium impact</td></tr>
+          <tr><td><strong>C</strong></td><td>Strategic — higher dev, strong long-term ROI</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Priority A — Quick wins (0–30 days)</h3>
+      <div class="recommendation">
+        <h4>1. Blue-light hybrid upgrade</h4>
+        <p class="action"><strong>Action:</strong> Convert existing Blokz/root page into a hybrid hub: concise educational content, FAQ schema, and a featured product grid (8–12 tiles) linking to <code>/b/</code> SKUs.</p>
+        <p class="why"><strong>Why:</strong> Highest single-term volume (60k) and existing inventory = fast wins. <strong>Brief:</strong> #1</p>
+      </div>
+      <div class="recommendation">
+        <h4>2. Aviator style guide</h4>
+        <p class="action"><strong>Action:</strong> Lightweight editorial + lookbook linking to <code>/b/aviator</code>; add AR/try-on CTA.</p>
+        <p class="why"><strong>Why:</strong> Captures 12k searches and leverages existing <code>/b/</code> inventory. <strong>Brief:</strong> #2</p>
+      </div>
+      <div class="recommendation">
+        <h4>3. Kids polarized safety hub</h4>
+        <p class="action"><strong>Action:</strong> Add clear safety/UV/polarization content and FAQ schema to kids sunglasses listings.</p>
+        <p class="why"><strong>Why:</strong> Addresses parental intent and supports conversions; <code>/b/</code> listings already exist.</p>
+      </div>
+
+      <h3>Priority B — Medium impact (30–60 days)</h3>
+      <div class="recommendation">
+        <h4>4. Face-shape landing pages</h4>
+        <p class="action"><strong>Action:</strong> Build separate pages for “Sunglasses for round face” and “Glasses for square face” (repurpose existing blog content). Include Product/FAQ/HowTo schema and curated shoppable picks. <strong>Brief:</strong> #3</p>
+      </div>
+      <div class="recommendation">
+        <h4>5. Rimless prescription guide</h4>
+        <p class="action"><strong>Action:</strong> Short guide + shoppable examples; use Product + Offer + FAQ schema. <strong>Brief:</strong> #4</p>
+      </div>
+      <div class="recommendation">
+        <h4>6. Glasses for astigmatism article</h4>
+        <p class="action"><strong>Action:</strong> Educational content linking to Rx funnels and relevant product pages.</p>
+      </div>
+      <div class="recommendation">
+        <h4>7. Reading-glasses strength chart</h4>
+        <p class="action"><strong>Action:</strong> Downloadable PDF + PD measurement video (linkable asset). <strong>Brief:</strong> #5</p>
+      </div>
+
+      <h3>Priority C — Strategic (60–90 days)</h3>
+      <div class="recommendation">
+        <h4>8. Face-shape finder quiz</h4>
+        <p class="action"><strong>Action:</strong> Interactive quiz that returns curated product grid and links to <code>/b/</code> filtered results. Higher dev but strong conversion lift.</p>
+      </div>
+      <div class="recommendation">
+        <h4>9. Men's prescription sunglasses hub</h4>
+        <p class="action"><strong>Action:</strong> Men-specific shape guide and curated picks.</p>
+      </div>
+      <div class="recommendation">
+        <h4>10. Oversized frames lookbook</h4>
+        <p class="action"><strong>Action:</strong> Seasonal trend page with shoppable tiles.</p>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2>5. 30/60/90 Day Implementation Timeline</h2>
+      <table>
+        <thead>
+          <tr><th>Phase</th><th>Timeline</th><th>Focus</th><th>Deliverables</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Sprint 1</strong></td>
+            <td>Days 0–30</td>
+            <td>Quick wins</td>
+            <td>Blue-light hybrid (content + FAQ schema + 8 product tiles); Aviator style guide (lookbook + AR CTA); Kids polarized hub (safety + FAQ schema). <strong>3 pages live</strong>, initial schema, rank tracking set.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprint 2</strong></td>
+            <td>Days 30–60</td>
+            <td>Medium builds</td>
+            <td>Face-shape landing pages (round + square); Rimless guide; start astigmatism article; begin Face-Shape Quiz (backend & mapping). <strong>3–4 pages live</strong>, quiz MVP in dev.</td>
+          </tr>
+          <tr>
+            <td><strong>Sprint 3</strong></td>
+            <td>Days 60–90</td>
+            <td>Strategic launches</td>
+            <td>Launch Face-Shape Quiz (integrate with product filters); Publish Reading-Glasses Strength Chart (PDF + PD video); Oversized lookbook + men's hub. <strong>All prioritized assets live</strong>; performance review and A/B tests begin.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="content-briefs">
+      <h2>6. Content Briefs Overview</h2>
+      <p>Five detailed, ready-to-assign content briefs (separate files):</p>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Brief</th><th>Priority</th><th>Target keyword</th><th>File</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Blue-light hybrid hub</td><td>A</td><td>blue light glasses (60,000/mo)</td><td><code>brief_01_blue_light_hub.md</code></td></tr>
+          <tr><td>2</td><td>Aviator style guide</td><td>A</td><td>aviator sunglasses women (12,000/mo)</td><td><code>brief_02_aviator_style_guide.md</code></td></tr>
+          <tr><td>3</td><td>Sunglasses for round face</td><td>B</td><td>sunglasses for round face (5,400/mo)</td><td><code>brief_03_sunglasses_round_face.md</code></td></tr>
+          <tr><td>4</td><td>Rimless prescription glasses</td><td>B</td><td>rimless prescription glasses (3,200/mo)</td><td><code>brief_04_rimless_prescription.md</code></td></tr>
+          <tr><td>5</td><td>Reading glasses strength chart</td><td>B</td><td>reading glasses strength chart (1,600/mo)</td><td><code>brief_05_reading_glasses_strength_chart.md</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="metrics">
+      <h2>7. Measurement & Success Metrics</h2>
+      <p><strong>Set up tracking before publishing.</strong></p>
+      <table>
+        <thead><tr><th>Area</th><th>What to track</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Rank tracking</strong></td><td>Add 10 target keywords to SEMrush (or preferred tool); weekly cadence.</td></tr>
+          <tr><td><strong>Page-level (GA4)</strong></td><td>Organic sessions, SERP CTR, bounce rate, time on page, scroll depth, add-to-cart rate from product tiles.</td></tr>
+          <tr><td><strong>Schema CTR</strong></td><td>GSC impressions & clicks for FAQ/HowTo/Product before and after schema rollout.</td></tr>
+          <tr><td><strong>Revenue</strong></td><td>Attributable orders from page → product SKU (last-click and assisted).</td></tr>
+          <tr><td><strong>Review cadence</strong></td><td>Weekly rank checks; 30/60/90 day performance reviews with incremental optimization.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="checklist">
+      <h2>8. Implementation Checklist & Handoff Notes</h2>
+      <h3>Developer & SEO (per new/updated page)</h3>
+      <ul class="checklist">
+        <li>JSON-LD for Product / Offer / FAQPage / HowTo as appropriate</li>
+        <li>Shoppable grid links correctly to <code>/b/</code> SKUs (UTM per tile)</li>
+        <li>Page-level canonical and sitemap updated</li>
+        <li>Mobile-responsive hero and product grid; LCP images optimized</li>
+        <li>AR try-on integrated on product tiles (if available)</li>
+        <li>Internal links from main nav, category pages, and related blog posts</li>
+        <li>New/updated pages submitted to GSC; monitor for errors</li>
+      </ul>
+      <h3>Content & creative</h3>
+      <ul class="checklist">
+        <li>Final copy (approved H1/H2/H3) and imagery per brief</li>
+        <li>PDF asset designed and accurate at 100% print scale</li>
+        <li>Short PD video (1–2 min) with captions and thumbnail</li>
+        <li>QA for accessibility and SEO (headings, alt text, ARIA where needed)</li>
+      </ul>
+      <h3>Project handoff</h3>
+      <p>Provide each brief in the project tracker: title, owner, est. days, acceptance criteria, live URL placeholder. Include: canonical, meta title, meta description, target keywords, and required JSON-LD snippet.</p>
+    </section>
+
+    <section id="appendix">
+      <h2>9. Appendix — Existing vs. Missing Assets</h2>
+      <table>
+        <thead><tr><th>Status</th><th>Assets</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Exists (ready to upgrade)</strong></td><td>Blokz/blue-light root & <code>/b/</code> listings; <code>/b/</code> aviator inventory; <code>/b/</code> kids listings; general face-shape blog (partial).</td></tr>
+          <tr><td><strong>Partial (inventory present, content missing)</strong></td><td>Aviator (style guide); Rimless (SKUs exist, guide missing); Men's sunglasses; Oversized frames (product pages exist).</td></tr>
+          <tr><td><strong>Missing (must build)</strong></td><td>Face-shape quiz; Dedicated face-shape landing hubs (round/square); Astigmatism guide; Reading-strength chart (PDF + video); Oversized lookbook.</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><em>Report prepared for Zenni Optical executive team.</em><br>Companion files: 5 detailed content briefs (separate .md files).</p>
+  </footer>
+</body>
+</html>
