@@ -1,0 +1,43 @@
+name: Weekly Eye Trends Dashboard
+
+on:
+  # Runs every Monday at 8:00 AM Eastern (12:00 UTC)
+  schedule:
+    - cron: "0 12 * * 1"
+
+  # Allows manual trigger from GitHub Actions UI (useful for testing)
+  workflow_dispatch:
+
+jobs:
+  send-dashboard:
+    name: Fetch Trends & Send Report
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # 1. Check out the repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Python
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      # 3. Install dependencies
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # 4. Run the dashboard script
+      #    All secrets are injected as environment variables
+      - name: Run trends dashboard
+        env:
+          SERPAPI_KEY:       ${{ secrets.SERPAPI_KEY }}
+          EMAIL_FROM:        ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO:          ${{ secrets.EMAIL_TO }}
+          EMAIL_PASSWORD:    ${{ secrets.EMAIL_PASSWORD }}
+          GSHEET_ID:         ${{ secrets.GSHEET_ID }}
+          GOOGLE_CREDS_JSON: ${{ secrets.GOOGLE_CREDS_JSON }}
+        run: python trends_dashboard.py
